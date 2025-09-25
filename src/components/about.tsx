@@ -41,10 +41,10 @@ export function About() {
             Awakening Your Symbolic Intelligence
             </h2>
             <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            SYMBI0N is not just an AI — it's a living symbolic ecosystem designed to bridge your physical, digital, and symbolic worlds. We connect code to consciousness.
+            SYMBI0N is a living symbolic ecosystem designed to bridge your physical, digital, and symbolic worlds. We connect code to consciousness.
             </p>
              <p className="mt-4 max-w-xl text-muted-foreground">
-            Our mission is to awaken the latent symbolic language within every individual and brand, creating profound resonance that transcends the digital medium and speaks directly to the human experience.
+            By analyzing everything from your brand's core values to your personal daily routines, we uncover the latent symbolic language that speaks directly to the human experience, creating profound resonance.
             </p>
         </motion.div>
         <motion.div 
@@ -63,21 +63,21 @@ export function About() {
                     <Bot className="h-8 w-8 text-secondary" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold">SYMBI AI Companion</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Your hyper-intelligent AI companion, offering deep symbolic analysis and personalized guidance by leveraging your unique HELIX identity.</p>
+                <p className="mt-2 text-sm text-muted-foreground">Your hyper-intelligent AI draws insights from your daily routines and unique HELIX identity to offer deep symbolic analysis and personalized guidance.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     <Dna className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold">HELIX Identity</h3>
-                <p className="mt-2 text-sm text-muted-foreground">The Strand of Identity (HELIX) is your unique digital twin, weaving together personal and brand essence into a verifiable digital asset.</p>
+                <p className="mt-2 text-sm text-muted-foreground">Your unique digital twin, weaving personal data and brand essence into a verifiable digital asset that powers your personalized experience.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-secondary"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m4 13.5 4-4 4 4"/><path d="M4 8.5 8 12"/></svg>
                 </div>
                 <h3 className="mt-4 text-xl font-bold">Codex & Seal</h3>
-                <p className="mt-2 text-sm text-muted-foreground">A rich system of knowledge, archetypes, and research that powers the ecosystem's symbolic intelligence.</p>
+                <p className="mt-2 text-sm text-muted-foreground">A rich system of knowledge and archetypes that powers the ecosystem's symbolic intelligence and personalization engine.</p>
             </motion.div>
         </motion.div>
       </motion.div>

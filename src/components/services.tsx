@@ -1,21 +1,21 @@
 
 import { SectionWrapper } from './section-wrapper';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
-import { User, Building, Store, Search } from 'lucide-react';
+import { User, Building, Store, Search, BarChart } from 'lucide-react';
 import { Button } from './ui/button';
 
 const individualServices = [
     { icon: <User />, title: 'HELIX Identity Creation & Management' },
-    { icon: <Search />, title: 'Personalized SYMBI Companion' },
-    { icon: <Store />, title: 'Symbolic Asset Management' },
-    { icon: <Search />, title: 'Personalized Symbolic Research' },
+    { icon: <Search />, title: 'Personalized SYMBI Companion (Daily Routine Insights)' },
+    { icon: <Store />, title: 'Symbolic Asset Management & Wallet' },
+    { icon: <BarChart />, title: 'Personalized Symbolic Analytics' },
 ]
 
 const brandServices = [
     { icon: <Building/>, title: 'Brand Identity & Symbolic Branding' },
     { icon: <Store />, title: 'Brand Asset Management & Monetization' },
-    { icon: <User />, title: 'Symbolic Audience Insights' },
-    { icon: <Search />, title: 'SYMBI AI as a Service (AIaaS)' },
+    { icon: <User />, title: 'Symbolic Audience & Market Insights' },
+    { icon: <Search />, title: 'SYMBI AI as a Service (Personalized Insights)' },
 ]
 
 
@@ -27,12 +27,12 @@ export function Services() {
           Our Offerings
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-            Explore a range of services designed for individuals and brands to thrive in the symbolic economy, with personalization at the core.
+            Explore a range of services for individuals and brands to thrive in the symbolic economy, with hyper-personalization at the core.
         </p>
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-        <Card>
+        <Card className="transition-all hover:shadow-lg hover:shadow-primary/10">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-primary">
                     <User />
@@ -50,7 +50,7 @@ export function Services() {
                 ))}
             </CardContent>
         </Card>
-        <Card>
+        <Card className="transition-all hover:shadow-lg hover:shadow-secondary/10">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-secondary">
                     <Building />
@@ -70,9 +70,11 @@ export function Services() {
         </Card>
       </div>
       <div className="mt-12 flex justify-center gap-4">
-        <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">Explore Services</Button>
-        <Button size="lg" variant="outline">
-            <Store className="mr-2" /> Join Auction
+        <Button size="lg" asChild>
+            <a href="#membership">Explore Memberships</a>
+        </Button>
+        <Button size="lg" variant="outline" asChild>
+            <a href="#marketplace"><Store className="mr-2" /> Join Auction</a>
         </Button>
       </div>
     </SectionWrapper>

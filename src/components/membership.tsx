@@ -23,6 +23,7 @@ const tiers = [
       'HELIX ID Creation',
       'Personalized SYMBI Companion',
       'Basic Asset Wallet',
+      'Basic Daily Routine Analysis',
     ],
     cta: 'Get Started',
     isPopular: false,
@@ -34,8 +35,8 @@ const tiers = [
     features: [
       'HELIX ID & Digital Twin',
       'Advanced SYMBI Personalization',
+      'Deep Routine & Lifestyle Insights',
       'Marketplace Auction Access',
-      'Full Asset Management',
     ],
     cta: 'Go Pro',
     isPopular: true,
@@ -48,6 +49,7 @@ const tiers = [
       'Brand HELIX Identity',
       'SYMBI AI Integration & Insights',
       'Symbolic Audience Analysis',
+      'Brand-level Data Analysis',
     ],
     cta: 'For Brands',
     isPopular: false,
@@ -60,6 +62,7 @@ const tiers = [
       'Full Brand Identity Suite',
       'SYMBI AI as a Service (SaaS)',
       'Brand Asset Monetization',
+      'Predictive Symbolic Modeling',
     ],
     cta: 'Brand Pro',
     isPopular: false,
@@ -71,6 +74,7 @@ const tiers = [
     features: [
       'Custom Symbolic AI Solutions',
       'Proprietary Symbolic Modeling',
+      'Full Data & Privacy Control',
       'Dedicated Research & Support',
     ],
     cta: 'Book Consultation',
@@ -151,7 +155,7 @@ export function Membership() {
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start">
                       <Check className="mr-3 h-5 w-5 flex-shrink-0 text-primary" />
-                      <span className="text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
