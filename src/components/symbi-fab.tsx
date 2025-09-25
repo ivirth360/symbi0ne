@@ -32,7 +32,7 @@ export function SymbiFAB() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'bot',
-      content: 'Welcome to the Symbi0n Ecosystem. Ask me for a symbolic analysis, or enter your name to generate your HELIX glyph.',
+      content: 'Welcome to the Symbi0n Ecosystem. I am SYMBI, your personalized AI companion. Ask for a symbolic analysis of a name or idea, or request your unique HELIX glyph.',
     },
   ]);
   const [input, setInput] = useState('');
@@ -103,8 +103,7 @@ export function SymbiFAB() {
               <span>Chat with SYMBI</span>
             </DialogTitle>
             <DialogDescription>
-              Your AI guide to the symbolic universe. Ask for a symbolic
-              analysis or anything else.
+              Your personal AI guide to the symbolic universe. Ask for a symbolic analysis, request a HELIX glyph, or seek guidance.
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col space-y-4">

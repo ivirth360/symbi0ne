@@ -59,10 +59,10 @@ export function Marketplace() {
         variants={itemVariants}
       >
         <h2 className="font-headline text-4xl font-bold md:text-5xl">
-          Featured Auction of the Week
+          Symbolic Asset Marketplace & Auction
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Sell, showcase, and collect symbolic assets — digital & physical. Each asset is tracked with Ekam Lipi provenance, ensuring uniqueness.
+          Acquire, sell, and showcase unique symbolic assets, from digital glyphs to physical art. Every asset is tracked with Ekam Lipi provenance, guaranteeing authenticity and value.
         </p>
       </motion.div>
       <motion.div 
@@ -109,8 +109,7 @@ export function Marketplace() {
               </CardHeader>
               <CardContent className="flex-grow">
                 <p className="text-base text-muted-foreground">
-                  A unique symbolic representation crafted within the Symbi0n
-                  ecosystem, holding deep personal and digital significance. This featured glyph is a one-of-a-kind asset available for a limited time.
+                  A unique symbolic asset crafted within the SYMBI0N ecosystem, holding deep personal and digital significance. This featured glyph is a one-of-a-kind creation available for a limited time, representing a powerful archetype of growth and potential.
                 </p>
               </CardContent>
               <CardFooter className="flex-col items-start gap-4 sm:flex-row sm:flex-wrap">

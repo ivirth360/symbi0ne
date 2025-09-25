@@ -21,7 +21,7 @@ export function LandingHero() {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-6 font-headline text-lg font-bold text-primary">
-            🔮 Your Companion, Your Seal, Your Universe.
+            🔮 Your AI Companion, Your Digital Seal, Your Symbolic Universe.
           </div>
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
             <span className="text-gradient">
@@ -29,10 +29,10 @@ export function LandingHero() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
-            From Code to Consciousness. From Words to Symbols.
+            Unleash the power of symbols. We transform digital identity, brand storytelling, and human-AI interaction by translating code into consciousness.
           </p>
           <p className="mt-4 text-muted-foreground">
-            Join the awakening this Diwali 2025.
+            Join the awakening. The future of digital identity launches Diwali 2025.
           </p>
         </motion.div>
         <motion.div
@@ -57,7 +57,7 @@ export function LandingHero() {
             asChild
           >
             <Link href="#about">
-              Learn More <ChevronRight className="ml-2 h-5 w-5" />
+              Explore The Ecosystem <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </motion.div>

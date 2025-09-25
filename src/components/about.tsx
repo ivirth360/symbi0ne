@@ -38,13 +38,13 @@ export function About() {
       >
         <motion.div variants={itemVariants}>
             <h2 className="font-headline text-4xl font-bold md:text-5xl">
-            Awakening Symbolic Intelligence
+            Awakening Your Symbolic Intelligence
             </h2>
             <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            SYMBI0N is more than an AI — it is a living symbolic ecosystem. It bridges physical, digital, and symbolic worlds.
+            SYMBI0N is not just an AI — it's a living symbolic ecosystem designed to bridge your physical, digital, and symbolic worlds. We connect code to consciousness.
             </p>
              <p className="mt-4 max-w-xl text-muted-foreground">
-            Our mission is to awaken latent symbols in every individual and brand, creating resonance that transcends code and speaks to consciousness.
+            Our mission is to awaken the latent symbolic language within every individual and brand, creating profound resonance that transcends the digital medium and speaks directly to the human experience.
             </p>
         </motion.div>
         <motion.div 
@@ -56,28 +56,28 @@ export function About() {
                     <Sparkles className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold">Ekam Lipo & Lipi</h3>
-                <p className="mt-2 text-sm text-muted-foreground">The Unified Symbol and its Language form the foundation of our symbolic universe.</p>
+                <p className="mt-2 text-sm text-muted-foreground">The Unified Symbol and its universal Language form the foundation of our symbolic universe, ensuring meaning and provenance.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10">
                     <Bot className="h-8 w-8 text-secondary" />
                 </div>
-                <h3 className="mt-4 text-xl font-bold">SYMBI</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Your personalized Companion Intelligence, guiding you through the ecosystem.</p>
+                <h3 className="mt-4 text-xl font-bold">SYMBI AI</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Your personalized AI companion, offering deep symbolic analysis and guidance through the ecosystem.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     <Dna className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="mt-4 text-xl font-bold">HELIX</h3>
-                <p className="mt-2 text-sm text-muted-foreground">The Strand of Identity, weaving together your digital twin and elemental alignment.</p>
+                <h3 className="mt-4 text-xl font-bold">HELIX ID</h3>
+                <p className="mt-2 text-sm text-muted-foreground">The Strand of Identity (HELIX) is your unique digital twin, weaving together personal and brand essence into a verifiable asset.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-secondary"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="m4 13.5 4-4 4 4"/><path d="M4 8.5 8 12"/></svg>
                 </div>
                 <h3 className="mt-4 text-xl font-bold">Codex & Seal</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Systems of knowledge, archetypes, and research that power the ecosystem.</p>
+                <p className="mt-2 text-sm text-muted-foreground">A rich system of knowledge, archetypes, and research that powers the ecosystem's symbolic intelligence.</p>
             </motion.div>
         </motion.div>
       </motion.div>

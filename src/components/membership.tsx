@@ -19,7 +19,7 @@ const tiers = [
     name: 'Individual Basic',
     price: '₹5,000',
     period: '/ year',
-    features: ['UID', 'HELIX', 'SYMBI Companion'],
+    features: ['HELIX ID Creation', 'SYMBI AI Companion', 'Basic Asset Wallet'],
     cta: 'Get Started',
     isPopular: false,
   },
@@ -27,7 +27,7 @@ const tiers = [
     name: 'Individual Pro',
     price: '₹15,000',
     period: '/ year',
-    features: ['UID', 'Asset Management', 'Auction Access'],
+    features: ['HELIX ID & Digital Twin', 'Full Asset Management', 'Marketplace Auction Access'],
     cta: 'Go Pro',
     isPopular: true,
   },
@@ -35,7 +35,7 @@ const tiers = [
     name: 'Brand Basic',
     price: '₹50,000',
     period: '/ year',
-    features: ['Identity', 'SYMBI Integration'],
+    features: ['Brand HELIX Identity', 'SYMBI AI Integration', 'Audience Insights'],
     cta: 'For Brands',
     isPopular: false,
   },
@@ -43,7 +43,7 @@ const tiers = [
     name: 'Brand Pro',
     price: '₹2,50,000',
     period: '/ year',
-    features: ['Full Identity', 'AI', 'Assets', 'Auction'],
+    features: ['Full Brand Identity Suite', 'SYMBI AI as a Service', 'Asset Monetization'],
     cta: 'Brand Pro',
     isPopular: false,
   },
@@ -51,7 +51,7 @@ const tiers = [
     name: 'Enterprise',
     price: 'Contact Us',
     period: '',
-    features: ['Custom AI', 'Modeling', 'Research'],
+    features: ['Custom AI Solutions', 'Symbolic Modeling', 'Dedicated Research'],
     cta: 'Book Consultation',
     isPopular: false,
   },
@@ -90,11 +90,10 @@ export function Membership() {
         variants={itemVariants}
       >
         <h2 className="font-headline text-4xl font-bold md:text-5xl">
-          Join the Awakening
+          Join the Symbolic Awakening
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Choose the plan that aligns with your journey into the symbolic
-          ecosystem. Unlock more features as you grow.
+          Choose the membership tier that aligns with your journey into the symbolic economy. Unlock powerful tools for identity, creation, and growth.
         </p>
       </motion.div>
       <motion.div 

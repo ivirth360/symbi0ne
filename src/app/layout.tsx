@@ -18,8 +18,19 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Symbi0n Ecosystem',
-  description: 'The next evolution of digital identity and symbolic interaction.',
+  title: 'SYMBI0N | Symbolic Intelligence & Digital Identity Ecosystem',
+  description:
+    'Explore SYMBI0N, the world’s first symbolic intelligence ecosystem. Create your unique digital identity (HELIX), engage with your personalized AI companion (SYMBI), and unlock the power of symbolic branding.',
+  keywords: [
+    'Symbolic Intelligence',
+    'Digital Identity',
+    'AI Companion',
+    'Brand Symbolism',
+    'HELIX',
+    'SYMBI',
+    'Ekam Lipi',
+    'Symbolic AI',
+  ],
 };
 
 export default function RootLayout({

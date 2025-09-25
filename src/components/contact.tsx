@@ -32,13 +32,13 @@ export function Contact() {
             await sendContactEmail(formData);
             toast({
                 title: "Identity Reserved!",
-                description: "Thank you for joining the Symbi0n Ecosystem. We will be in touch.",
+                description: "Thank you for joining the Symbi0n Ecosystem. We will be in touch soon with next steps.",
             });
             (e.target as HTMLFormElement).reset();
         } catch (error) {
              toast({
                 title: "Error",
-                description: "Could not send your message. Please try again later.",
+                description: "Could not send your reservation. Please try again later.",
                 variant: "destructive",
             });
         }
@@ -52,17 +52,17 @@ export function Contact() {
             Step Into the Age of Symbolic Intelligence
           </h2>
           <p className="mt-4 max-w-2xl mx-auto lg:mx-0 text-lg text-muted-foreground">
-            Create your SYMBI0N identity, manage your assets, and join the community of innovators, creators, and visionaries. Fill out the form to reserve your identity or book a consultation.
+            Create your unique SYMBI0N identity, manage your symbolic assets, and join a global community of innovators, creators, and visionaries. Fill out the form to reserve your identity or book a consultation for your brand.
           </p>
         </div>
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Sparkles className="h-6 w-6 text-primary" />
-              <span>Reserve Your Identity</span>
+              <span>Reserve Your Digital Identity</span>
             </CardTitle>
             <CardDescription>
-              Join the waitlist and secure your place in the ecosystem.
+              Join the waitlist to secure your place in the Symbi0n ecosystem and begin your journey.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -117,17 +117,17 @@ export function Contact() {
                     <SelectValue placeholder="What brings you to Symbi0n?" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="individual">Individual Identity</SelectItem>
-                    <SelectItem value="brand">Brand Identity</SelectItem>
-                    <SelectItem value="auction">Auction & Marketplace</SelectItem>
-                    <SelectItem value="research">Research & Collaboration</SelectItem>
+                    <SelectItem value="individual">Individual Identity (HELIX)</SelectItem>
+                    <SelectItem value="brand">Brand Identity &amp; Branding</SelectItem>
+                    <SelectItem value="auction">Asset Auction &amp; Marketplace</SelectItem>
+                    <SelectItem value="research">Research &amp; Collaboration</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="md:col-span-2">
                 <Button type="submit" size="lg" className="w-full animate-subtle-pulse">
-                  Reserve Identity
+                  Reserve My Identity
                 </Button>
               </div>
             </form>
