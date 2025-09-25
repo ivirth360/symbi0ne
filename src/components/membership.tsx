@@ -70,7 +70,7 @@ export function Membership() {
           <Card
             key={tier.name}
             className={`flex flex-col border-primary/20 bg-card/50 ${
-              tier.isPopular ? 'border-2 border-accent shadow-2xl shadow-accent/20' : ''
+              tier.isPopular ? 'border-2 border-accent shadow-2xl shadow-accent/10' : 'border-border'
             }`}
           >
             <CardHeader>
@@ -91,7 +91,7 @@ export function Membership() {
               <ul className="space-y-3">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start">
-                    <Check className="mr-3 h-5 w-5 flex-shrink-0 text-accent" />
+                    <Check className="mr-3 h-5 w-5 flex-shrink-0 text-primary" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
@@ -100,7 +100,7 @@ export function Membership() {
             <CardFooter>
               <Button
                 className={`w-full ${
-                  tier.isPopular ? 'bg-accent hover:bg-accent/90' : ''
+                  tier.isPopular || tier.cta === 'Book Consultation' ? 'bg-accent text-accent-foreground hover:bg-accent/90' : ''
                 }`}
                 variant={tier.isPopular ? 'default' : 'outline'}
               >

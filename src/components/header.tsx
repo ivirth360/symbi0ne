@@ -15,7 +15,8 @@ const navLinks = [
   { href: '#services', label: 'Services' },
   { href: '#modules', label: 'Modules' },
   { href: '#membership', label: 'Memberships' },
-  { href: '#marketplace', label: 'Marketplace' },
+  { href: '#marketplace', label: 'Auction' },
+  { href: '#contact', label: 'Contact'}
 ];
 
 export function Header() {
@@ -40,7 +41,7 @@ export function Header() {
         </nav>
         <div className="ml-auto flex items-center space-x-4">
           <Button variant="ghost" className="hidden sm:inline-flex">Log In</Button>
-          <Button className="hidden bg-accent hover:bg-accent/90 sm:inline-flex">Sign Up</Button>
+          <Button className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex">Sign Up</Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
@@ -68,7 +69,7 @@ export function Header() {
                 </nav>
                 <div className="mt-8 flex flex-col space-y-4">
                   <Button variant="ghost">Log In</Button>
-                  <Button className="bg-accent hover:bg-accent/90">Sign Up</Button>
+                  <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Sign Up</Button>
                 </div>
               </div>
             </SheetContent>

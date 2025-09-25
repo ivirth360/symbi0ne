@@ -19,7 +19,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Inter', ...fontFamily.sans],
-        headline: ['"Space Grotesk"', ...fontFamily.sans],
+        headline: ['Orbitron', ...fontFamily.sans],
         code: ['monospace'],
       },
       colors: {
@@ -100,22 +100,22 @@ export default {
           '0%, 100%': {
             opacity: '0.7',
             boxShadow:
-              '0 0 1rem -0.25rem hsl(var(--primary)), 0 0 2.5rem -0.5rem hsl(var(--accent))',
+              '0 0 1rem -0.25rem hsl(var(--primary)), 0 0 2.5rem -0.5rem hsl(var(--secondary))',
           },
           '50%': {
             opacity: '1',
             boxShadow:
-              '0 0 2rem -0.25rem hsl(var(--primary)), 0 0 5rem -0.5rem hsl(var(--accent))',
+              '0 0 2rem -0.25rem hsl(var(--primary)), 0 0 5rem -0.5rem hsl(var(--secondary))',
           },
         },
         'subtle-pulse': {
           '0%, 100%': {
             transform: 'scale(1)',
-            boxShadow: '0 0 0 0 rgba(106, 90, 205, 0.4)',
+            boxShadow: '0 0 0 0 hsla(var(--accent), 0.7)',
           },
           '70%': {
             transform: 'scale(1.02)',
-            boxShadow: '0 0 0 10px rgba(106, 90, 205, 0)',
+            boxShadow: '0 0 0 10px hsla(var(--accent), 0)',
           },
         },
       },

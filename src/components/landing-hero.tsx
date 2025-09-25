@@ -7,9 +7,9 @@ export function LandingHero() {
   return (
     <section className="relative overflow-hidden py-24 text-center md:py-32 lg:py-40">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-background/50"></div>
-        <div className="absolute h-full w-full animate-glow rounded-full bg-primary/20 blur-3xl"></div>
-        <div className="absolute left-1/4 top-1/4 h-1/2 w-1/2 animate-glow rounded-full bg-accent/10 blur-3xl animation-delay-[-2s]"></div>
+        <div className="absolute inset-0 bg-background/80"></div>
+        <div className="absolute h-full w-full animate-glow rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="absolute left-1/4 top-1/4 h-1/2 w-1/2 animate-glow rounded-full bg-secondary/10 blur-3xl animation-delay-[-2s]"></div>
       </div>
       <div className="container relative mx-auto">
         <motion.div
@@ -22,7 +22,7 @@ export function LandingHero() {
           </div>
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
             SYMBI
-            <span className="text-accent">0</span>N – The World’s First Symbolic
+            <span className="text-secondary">0</span>N – The World’s First Symbolic
             Intelligence Ecosystem
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
@@ -40,14 +40,14 @@ export function LandingHero() {
         >
           <Button
             size="lg"
-            className="h-12 flex-grow rounded-full text-base animate-subtle-pulse"
+            className="h-12 flex-grow rounded-full bg-accent text-base text-accent-foreground animate-subtle-pulse hover:bg-accent/90"
           >
             Reserve Your Identity <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="h-12 flex-grow rounded-full text-base"
+            className="h-12 flex-grow rounded-full border-primary/50 text-base"
           >
             Learn More <ChevronRight className="ml-2 h-5 w-5" />
           </Button>

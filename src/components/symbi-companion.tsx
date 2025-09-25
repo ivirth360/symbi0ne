@@ -50,7 +50,7 @@ export function SymbiCompanion() {
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
-    setInput('');
+setInput('');
 
     startTransition(async () => {
       const result = await personalizedSYMBICompanion({ query: input });
@@ -95,7 +95,7 @@ export function SymbiCompanion() {
         </CardHeader>
         <CardContent>
           <ScrollArea
-            className="h-[400px] w-full rounded-md border border-input p-4"
+            className="h-[400px] w-full rounded-md border p-4"
             ref={scrollAreaRef}
           >
             <div className="space-y-4">
@@ -118,8 +118,8 @@ export function SymbiCompanion() {
                     className={cn(
                       'max-w-sm rounded-lg px-4 py-2 text-sm md:max-w-md',
                       message.role === 'user'
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-secondary text-secondary-foreground'
+                        ? 'bg-accent text-accent-foreground'
+                        : 'bg-muted text-muted-foreground'
                     )}
                   >
                     {message.content}
@@ -140,7 +140,7 @@ export function SymbiCompanion() {
                       <Bot className="h-5 w-5" />
                     </AvatarFallback>
                   </Avatar>
-                  <div className="flex items-center space-x-2 rounded-lg bg-secondary px-4 py-2 text-sm text-secondary-foreground">
+                  <div className="flex items-center space-x-2 rounded-lg bg-muted px-4 py-2 text-sm text-muted-foreground">
                     <Loader2 className="h-4 w-4 animate-spin" />
                     <span>Thinking...</span>
                   </div>
@@ -163,7 +163,7 @@ export function SymbiCompanion() {
               size="icon"
               onClick={handleSend}
               disabled={isPending || !input.trim()}
-              className="h-11 w-11 flex-shrink-0"
+              className="h-11 w-11 flex-shrink-0 bg-accent text-accent-foreground hover:bg-accent/90"
             >
               <Send className="h-5 w-5" />
             </Button>

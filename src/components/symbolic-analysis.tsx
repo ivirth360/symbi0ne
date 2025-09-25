@@ -86,7 +86,7 @@ export function SymbolicAnalysis() {
             <Button
               onClick={handleAnalysis}
               disabled={isPending || !text.trim()}
-              className="w-full"
+              className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
             >
               {isPending ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -116,7 +116,7 @@ export function SymbolicAnalysis() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
-                <h3 className="font-headline text-xl font-semibold text-accent">
+                <h3 className="font-headline text-xl font-semibold text-primary">
                   Symbolic Analysis Result
                 </h3>
                 <p className="mt-4 whitespace-pre-wrap text-muted-foreground">

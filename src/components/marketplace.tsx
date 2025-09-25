@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import {
   Card,
@@ -12,6 +13,7 @@ import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { SectionWrapper } from './section-wrapper';
 import { Layers, List } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const assets = [
   {
@@ -69,9 +71,9 @@ export function Marketplace() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle>{asset.name}</CardTitle>
-                <Badge variant="secondary">{asset.type}</Badge>
+                <Badge variant="secondary" className="bg-secondary/20 text-secondary-foreground">{asset.type}</Badge>
               </div>
-              <CardDescription className="pt-2 text-lg font-semibold text-accent">
+              <CardDescription className="pt-2 text-lg font-semibold text-primary">
                 {asset.price}
               </CardDescription>
             </CardHeader>
@@ -82,7 +84,7 @@ export function Marketplace() {
               </p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">
+              <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                 <Layers className="mr-2 h-4 w-4" />
                 Place Bid
               </Button>
@@ -91,7 +93,7 @@ export function Marketplace() {
         ))}
       </div>
       <div className="mt-12 flex justify-center gap-4">
-        <Button size="lg">
+        <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
           Browse Auction
         </Button>
         <Button size="lg" variant="outline">

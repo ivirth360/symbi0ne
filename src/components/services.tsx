@@ -1,6 +1,6 @@
 
 import { SectionWrapper } from './section-wrapper';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from './ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
 import { User, Building, Store, Search, BarChart, Settings } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -34,8 +34,8 @@ export function Services() {
       <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
         <Card className="border-primary/20 bg-card/50">
             <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                    <User className="text-primary"/>
+                <CardTitle className="flex items-center gap-3 text-primary">
+                    <User />
                     <span>For Individuals</span>
                 </CardTitle>
             </CardHeader>
@@ -50,17 +50,17 @@ export function Services() {
                 ))}
             </CardContent>
         </Card>
-        <Card className="border-accent/20 bg-card/50">
+        <Card className="border-secondary/20 bg-card/50">
             <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                    <Building className="text-accent"/>
+                <CardTitle className="flex items-center gap-3 text-secondary">
+                    <Building />
                     <span>For Brands & Public Figures</span>
                 </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
                 {brandServices.map(service => (
                     <div key={service.title} className="flex items-center gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                             {service.icon}
                         </div>
                         <p className="text-muted-foreground">{service.title}</p>
@@ -70,7 +70,7 @@ export function Services() {
         </Card>
       </div>
       <div className="mt-12 flex justify-center gap-4">
-        <Button size="lg">Explore Services</Button>
+        <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">Explore Services</Button>
         <Button size="lg" variant="outline">
             <Store className="mr-2" /> Join Auction
         </Button>

@@ -70,7 +70,7 @@ export function HelixDemo() {
                   size="lg"
                   onClick={handleGenerate}
                   disabled={isGenerating || !name.trim()}
-                  className="animate-subtle-pulse"
+                  className="animate-subtle-pulse bg-accent text-accent-foreground hover:bg-accent/90"
                 >
                   <Sparkles className="mr-2 h-4 w-4" />
                   {isGenerating ? 'Generating...' : 'Generate'}
@@ -121,7 +121,7 @@ export function HelixDemo() {
                   data-ai-hint={helixImage.imageHint}
                   width={300}
                   height={300}
-                  className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/30 animate-in fade-in zoom-in-75 duration-700"
+                  className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/20 animate-in fade-in zoom-in-75 duration-700"
                 />
               </motion.div>
             )}
