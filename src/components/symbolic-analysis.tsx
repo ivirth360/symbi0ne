@@ -12,7 +12,7 @@ import {
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { analyzeSymbolism } from '@/ai/flows/ai-symbolic-analysis';
+import { symbi } from '@/ai/flows/symbi';
 import { Sparkles, Loader2, Wand2 } from 'lucide-react';
 import { SectionWrapper } from './section-wrapper';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -35,9 +35,9 @@ export function SymbolicAnalysis() {
 
     startTransition(async () => {
       setAnalysis('');
-      const result = await analyzeSymbolism({ text });
-      if (result.analysis) {
-        setAnalysis(result.analysis);
+      const result = await symbi({ query: text });
+      if (result.response) {
+        setAnalysis(result.response);
       } else {
         toast({
           title: 'Analysis Failed',

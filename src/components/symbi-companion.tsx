@@ -11,7 +11,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { personalizedSYMBICompanion } from '@/ai/flows/personalized-symbi-companion';
+import { symbi } from '@/ai/flows/symbi';
 import { Send, Bot, User, Loader2 } from 'lucide-react';
 import { SectionWrapper } from './section-wrapper';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -27,8 +27,7 @@ export function SymbiCompanion() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'bot',
-      content:
-        'Ask me about your symbolic identity or assets.',
+      content: 'Ask me about your symbolic identity or assets.',
     },
   ]);
   const [input, setInput] = useState('');
@@ -50,10 +49,10 @@ export function SymbiCompanion() {
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
-setInput('');
+    setInput('');
 
     startTransition(async () => {
-      const result = await personalizedSYMBICompanion({ query: input });
+      const result = await symbi({ query: input });
       if (result.response) {
         const botMessage: Message = { role: 'bot', content: result.response };
         setMessages((prev) => [...prev, botMessage]);
