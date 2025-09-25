@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', ...fontFamily.sans],
-        headline: ['Orbitron', ...fontFamily.sans],
+        body: ['"Space Grotesk"', ...fontFamily.sans],
+        headline: ['"Space Grotesk"', ...fontFamily.sans],
         code: ['monospace'],
       },
       colors: {
