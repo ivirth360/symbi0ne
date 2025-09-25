@@ -25,11 +25,11 @@ export function LandingHero() {
           </div>
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
             <span className="text-gradient">
-              SYMBI0N – The World’s First Symbolic Intelligence Ecosystem
+              SYMBI0N: Where Digital Identity Meets Symbolic Intelligence
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
-            Unleash the power of symbols. We transform digital identity, brand storytelling, and human-AI interaction by translating code into consciousness.
+            Unleash the power of symbols. We translate the code of your identity into conscious, resonant experiences, transforming brand storytelling, human-AI interaction, and the very fabric of your digital presence.
           </p>
           <p className="mt-4 text-muted-foreground">
             Join the awakening. The future of digital identity launches Diwali 2025.

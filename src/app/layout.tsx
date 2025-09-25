@@ -18,9 +18,9 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'SYMBI0N | Symbolic Intelligence & Digital Identity Ecosystem',
+  title: 'SYMBI0N | Symbolic Intelligence, Digital Identity & Personalized AI',
   description:
-    'Explore SYMBI0N, the world’s first symbolic intelligence ecosystem. Create your unique digital identity (HELIX), engage with your personalized AI companion (SYMBI), and unlock the power of symbolic branding.',
+    'Explore SYMBI0N, the world’s first symbolic intelligence ecosystem. Create your unique digital identity (HELIX), engage with your personalized AI companion (SYMBI), and build resonant digital spaces.',
   keywords: [
     'Symbolic Intelligence',
     'Digital Identity',
@@ -30,6 +30,8 @@ export const metadata: Metadata = {
     'SYMBI',
     'Ekam Lipi',
     'Symbolic AI',
+    'Digital Spaces',
+    'Personalized AI',
   ],
 };
 

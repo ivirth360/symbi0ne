@@ -41,10 +41,10 @@ export function About() {
             Awakening Your Symbolic Intelligence
             </h2>
             <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            SYMBI0N is a living symbolic ecosystem designed to bridge your physical, digital, and symbolic worlds. We connect code to consciousness.
+            SYMBI0N is a living ecosystem designed to bridge your physical, digital, and symbolic worlds. We provide the tools to translate your core essence into a powerful, verifiable, and interactive digital identity.
             </p>
              <p className="mt-4 max-w-xl text-muted-foreground">
-            By analyzing everything from your brand's core values to your personal daily routines, we uncover the latent symbolic language that speaks directly to the human experience, creating profound resonance.
+            By analyzing everything from your brand's mission to your personal routines, our AI uncovers the latent symbolic language that creates profound resonance, powers personalized digital spaces, and offers deep, actionable insights.
             </p>
         </motion.div>
         <motion.div 
@@ -56,7 +56,7 @@ export function About() {
                     <Sparkles className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="mt-4 text-xl font-bold">Ekam Lipo & Lipi</h3>
-                <p className="mt-2 text-sm text-muted-foreground">The Unified Symbol and its universal Language form the foundation of our symbolic universe, ensuring meaning and provenance.</p>
+                <p className="mt-2 text-sm text-muted-foreground">The Unified Symbol and its universal language form the foundation of our symbolic universe, ensuring meaning and provenance for every digital asset.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10">

@@ -1,13 +1,14 @@
 
 import { SectionWrapper } from './section-wrapper';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
-import { User, Building, Store, Search, BarChart, PenTool } from 'lucide-react';
+import { User, Building, Store, Search, BarChart, PenTool, Globe } from 'lucide-react';
 import { Button } from './ui/button';
 
 const individualServices = [
     { icon: <User />, title: 'HELIX Identity Creation & Management' },
     { icon: <Search />, title: 'Personalized SYMBI Companion (Daily Routine Insights)' },
     { icon: <Store />, title: 'Symbolic Asset Management & Wallet' },
+    { icon: <Globe />, title: 'Personalized Digital Spaces' },
     { icon: <BarChart />, title: 'Personalized Symbolic Analytics' },
 ]
 
@@ -17,6 +18,7 @@ const brandServices = [
     { icon: <Store />, title: 'Brand Asset Management & Monetization' },
     { icon: <User />, title: 'Symbolic Audience & Market Insights' },
     { icon: <Search />, title: 'SYMBI AI as a Service (Personalized Insights)' },
+    { icon: <Globe />, title: 'Branded Digital Spaces & Experiences' },
 ]
 
 
@@ -25,10 +27,10 @@ export function Services() {
     <SectionWrapper id="services">
       <div className="text-center">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">
-          Our Offerings
+          A Universe of Offerings
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-            Explore a range of services for individuals and brands to thrive in the symbolic economy, with hyper-personalization at the core.
+            Explore a range of services for individuals and brands to thrive in the symbolic economy, with hyper-personalization and deep insights at the core.
         </p>
       </div>
 
