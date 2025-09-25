@@ -84,13 +84,13 @@ export function SymbiFAB() {
   return (
     <>
       <Button
-        className="animate-subtle-pulse fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-accent-foreground shadow-2xl shadow-accent/40"
+        className="animate-subtle-pulse fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-2xl shadow-accent/40"
         onClick={() => setIsOpen(true)}
       >
         <Sparkles className="h-8 w-8" />
       </Button>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl border-primary/20 bg-card/80 backdrop-blur-sm">
+        <DialogContent className="max-w-2xl border-primary/20 backdrop-blur-sm">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-gradient">
               <Bot className="h-8 w-8" />
@@ -123,7 +123,7 @@ export function SymbiFAB() {
                       className={cn(
                         'max-w-sm rounded-lg px-4 py-2 text-sm md:max-w-md',
                         message.role === 'user'
-                          ? 'bg-gradient-to-r from-primary to-secondary text-accent-foreground'
+                          ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground'
                           : 'bg-muted text-muted-foreground'
                       )}
                     >

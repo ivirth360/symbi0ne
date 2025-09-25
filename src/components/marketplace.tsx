@@ -64,7 +64,7 @@ export function Marketplace() {
         {featuredAsset.image && (
              <motion.div className="md:col-span-2" variants={itemVariants}>
                 <Card
-                    className="group overflow-hidden border-primary/20 bg-card/50 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+                    className="group overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
                 >
                     <div className="overflow-hidden">
                     <Image
@@ -81,7 +81,7 @@ export function Marketplace() {
         )}
         <motion.div className="md:col-span-3" variants={itemVariants}>
              <Card
-              className="group flex flex-col justify-between h-full overflow-hidden border-primary/20 bg-card/50 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+              className="group flex flex-col justify-between h-full overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
             >
               <CardHeader>
                 <div className="flex items-center justify-between">

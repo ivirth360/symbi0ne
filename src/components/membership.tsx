@@ -71,7 +71,7 @@ export function Membership() {
         {tiers.map((tier) => (
           <Card
             key={tier.name}
-            className={`flex flex-col border-primary/20 bg-card/50 transition-all hover:shadow-lg hover:shadow-primary/10 ${
+            className={`flex flex-col transition-all hover:shadow-lg hover:shadow-primary/10 ${
               tier.isPopular ? 'border-2 border-accent shadow-2xl shadow-accent/10' : 'border-border'
             }`}
           >

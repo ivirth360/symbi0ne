@@ -55,7 +55,7 @@ export function Contact() {
             Create your SYMBI0N identity, manage your assets, and join the community of innovators, creators, and visionaries. Fill out the form to reserve your identity or book a consultation.
           </p>
         </div>
-        <Card className="border-primary/20 bg-card/50">
+        <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Sparkles className="h-6 w-6 text-primary" />

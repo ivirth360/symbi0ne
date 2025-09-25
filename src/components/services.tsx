@@ -32,7 +32,7 @@ export function Services() {
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-        <Card className="border-primary/20 bg-card/50">
+        <Card>
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-primary">
                     <User />
@@ -50,7 +50,7 @@ export function Services() {
                 ))}
             </CardContent>
         </Card>
-        <Card className="border-secondary/20 bg-card/50">
+        <Card>
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-secondary">
                     <Building />
