@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -102,13 +103,17 @@ export function Marketplace() {
                 </p>
               </CardContent>
               <CardFooter className="flex-col items-start gap-4 sm:flex-row">
-                <Button size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">
-                  <Layers className="mr-2 h-4 w-4" />
-                  Place Bid
+                <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Link href="#contact">
+                    <Layers className="mr-2 h-4 w-4" />
+                    Place Bid
+                  </Link>
                 </Button>
-                 <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    <List className="mr-2 h-4 w-4" />
-                    List Your Asset
+                 <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+                    <Link href="#contact">
+                      <List className="mr-2 h-4 w-4" />
+                      List Your Asset
+                    </Link>
                 </Button>
               </CardFooter>
             </Card>
