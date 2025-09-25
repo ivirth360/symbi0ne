@@ -19,17 +19,29 @@ import {
 import { SectionWrapper } from './section-wrapper';
 import { Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { sendContactEmail } from '@/app/actions/send-email';
 
 export function Contact() {
     const { toast } = useToast();
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        toast({
-            title: "Identity Reserved!",
-            description: "Thank you for joining the Symbi0n Ecosystem. We will be in touch.",
-        });
-        (e.target as HTMLFormElement).reset();
+        const formData = new FormData(e.target as HTMLFormElement);
+        
+        try {
+            await sendContactEmail(formData);
+            toast({
+                title: "Identity Reserved!",
+                description: "Thank you for joining the Symbi0n Ecosystem. We will be in touch.",
+            });
+            (e.target as HTMLFormElement).reset();
+        } catch (error) {
+             toast({
+                title: "Error",
+                description: "Could not send your message. Please try again later.",
+                variant: "destructive",
+            });
+        }
     }
 
   return (
@@ -57,15 +69,15 @@ export function Contact() {
             <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label htmlFor="fullName">Full Name</Label>
-                <Input id="fullName" placeholder="Your full name" required />
+                <Input name="fullName" id="fullName" placeholder="Your full name" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="brand">Brand (Optional)</Label>
-                <Input id="brand" placeholder="Your brand or company" />
+                <Input name="brand" id="brand" placeholder="Your brand or company" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="gender">Gender</Label>
-                <Select required>
+                <Select name="gender" required>
                   <SelectTrigger id="gender">
                     <SelectValue placeholder="Select gender" />
                   </SelectTrigger>
@@ -80,27 +92,27 @@ export function Contact() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="Your email address" required />
+                <Input name="email" id="email" type="email" placeholder="Your email address" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" type="tel" placeholder="Your phone number" required/>
+                <Input name="phone" id="phone" type="tel" placeholder="Your phone number" required/>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="dob">Date of Birth</Label>
-                <Input id="dob" type="date" required />
+                <Input name="dob" id="dob" type="date" required />
               </div>
                <div className="space-y-2">
                 <Label htmlFor="tob">Time of Birth</Label>
-                <Input id="tob" type="time" required/>
+                <Input name="tob" id="tob" type="time" required/>
               </div>
                <div className="space-y-2">
                 <Label htmlFor="pob">Place of Birth</Label>
-                <Input id="pob" placeholder="City, Country" required/>
+                <Input name="pob" id="pob" placeholder="City, Country" required/>
               </div>
               <div className="space-y-2 md:col-span-2">
                 <Label htmlFor="purpose">Purpose</Label>
-                 <Select required>
+                 <Select name="purpose" required>
                   <SelectTrigger id="purpose">
                     <SelectValue placeholder="What brings you to Symbi0n?" />
                   </SelectTrigger>
