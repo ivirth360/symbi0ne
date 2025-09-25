@@ -14,24 +14,27 @@ import {
   DropdownMenuSubContent,
 } from '@/components/ui/dropdown-menu';
 import { Moon, Sun, Palette, Droplet, Flame, Wind, Mountain, CircleDot, Asterisk } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function ThemeSwitcher() {
   const { setTheme, setElementalTheme } = useTheme();
 
   return (
-    <div className="fixed bottom-20 right-6 z-50">
+    <div className="fixed bottom-6 left-6 z-50">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-              variant="outline"
-              size="icon"
-              className="h-16 w-16 rounded-full border-border/50 bg-background/80 shadow-lg backdrop-blur-sm"
-          >
-            <Palette className="h-8 w-8" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+           <motion.div whileHover={{ scale: 1.1, rotate: 15 }} whileTap={{ scale: 0.9 }}>
+            <Button
+                variant="outline"
+                size="icon"
+                className="h-16 w-16 rounded-full border-border/50 bg-background/80 shadow-lg backdrop-blur-sm"
+            >
+              <Palette className="h-8 w-8" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </motion.div>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent align="start">
           <DropdownMenuSub>
               <DropdownMenuSubTrigger>
                   <Palette className="mr-2 h-4 w-4" />
