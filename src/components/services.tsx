@@ -1,21 +1,21 @@
 
 import { SectionWrapper } from './section-wrapper';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
-import { User, Building, Store, Search, BarChart, Settings } from 'lucide-react';
+import { User, Building, Store, Search } from 'lucide-react';
 import { Button } from './ui/button';
 
 const individualServices = [
-    { icon: <User />, title: 'Identity Creation & Management' },
-    { icon: <Settings />, title: 'Personalized SYMBI Companion' },
-    { icon: <BarChart />, title: 'Asset Management: Digital & Physical Glyphs' },
-    { icon: <Search />, title: 'Research & Symbolic Design' },
+    { icon: <User />, title: 'HELIX Identity Creation & Management' },
+    { icon: <Search />, title: 'Personalized SYMBI Companion' },
+    { icon: <Store />, title: 'Symbolic Asset Management' },
+    { icon: <Search />, title: 'Personalized Symbolic Research' },
 ]
 
 const brandServices = [
     { icon: <Building/>, title: 'Brand Identity & Symbolic Branding' },
-    { icon: <BarChart />, title: 'Assets Management & Monetization' },
-    { icon: <User />, title: 'Audience & Users Management' },
-    { icon: <Settings />, title: 'AI as a Service (SYMBI-powered insights)' },
+    { icon: <Store />, title: 'Brand Asset Management & Monetization' },
+    { icon: <User />, title: 'Symbolic Audience Insights' },
+    { icon: <Search />, title: 'SYMBI AI as a Service (AIaaS)' },
 ]
 
 
@@ -27,7 +27,7 @@ export function Services() {
           Our Offerings
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
-            Explore a range of services designed for individuals and brands to thrive in the symbolic economy.
+            Explore a range of services designed for individuals and brands to thrive in the symbolic economy, with personalization at the core.
         </p>
       </div>
 

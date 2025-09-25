@@ -62,15 +62,15 @@ export function About() {
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10">
                     <Bot className="h-8 w-8 text-secondary" />
                 </div>
-                <h3 className="mt-4 text-xl font-bold">SYMBI AI</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Your personalized AI companion, offering deep symbolic analysis and guidance through the ecosystem.</p>
+                <h3 className="mt-4 text-xl font-bold">SYMBI AI Companion</h3>
+                <p className="mt-2 text-sm text-muted-foreground">Your hyper-intelligent AI companion, offering deep symbolic analysis and personalized guidance by leveraging your unique HELIX identity.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     <Dna className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="mt-4 text-xl font-bold">HELIX ID</h3>
-                <p className="mt-2 text-sm text-muted-foreground">The Strand of Identity (HELIX) is your unique digital twin, weaving together personal and brand essence into a verifiable asset.</p>
+                <h3 className="mt-4 text-xl font-bold">HELIX Identity</h3>
+                <p className="mt-2 text-sm text-muted-foreground">The Strand of Identity (HELIX) is your unique digital twin, weaving together personal and brand essence into a verifiable digital asset.</p>
             </motion.div>
             <motion.div className="flex flex-col items-center text-center" variants={itemVariants}>
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10">
