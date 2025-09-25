@@ -15,14 +15,20 @@ const modules = [
 export function Modules() {
   return (
     <SectionWrapper id="modules">
-      <div className="text-center">
+      <motion.div 
+        className="text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="font-headline text-4xl font-bold md:text-5xl">
           Core Modules of SYMBI0N
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Explore the foundational components that power the Symbi0n ecosystem.
         </p>
-      </div>
+      </motion.div>
 
       <div className="relative mt-20 flex min-h-[400px] items-center justify-center">
         <motion.div
@@ -35,9 +41,15 @@ export function Modules() {
           animate={{ rotate: -360 }}
           transition={{ ease: 'linear', duration: 50, repeat: Infinity }}
         />
-        <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-primary/10 text-center font-bold text-primary shadow-2xl shadow-primary/20">
+        <motion.div 
+          className="relative flex h-32 w-32 items-center justify-center rounded-full bg-primary/10 text-center font-bold text-primary shadow-2xl shadow-primary/20"
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           SYMBI
-        </div>
+        </motion.div>
         {modules.map((module, index) => {
           const angle = (index / modules.length) * 2 * Math.PI;
           const radius = 220; // in pixels
@@ -49,13 +61,17 @@ export function Modules() {
               key={module.name}
               className="absolute flex flex-col items-center text-center"
               initial={{ x: 0, y: 0, opacity: 0 }}
-              animate={{ x, y, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 * index }}
+              whileInView={{ x, y, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.4 + 0.15 * index }}
             >
               <div className="group relative">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all hover:bg-secondary/20">
+                <motion.div 
+                  className="flex h-24 w-24 items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all hover:bg-secondary/20 hover:scale-110"
+                  whileHover={{ scale: 1.1 }}
+                >
                   <h3 className="text-sm font-bold text-secondary">{module.name}</h3>
-                </div>
+                </motion.div>
                 <div className="absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-2 text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
                   {module.description}
                 </div>
@@ -65,11 +81,17 @@ export function Modules() {
         })}
       </div>
 
-      <div className="mt-20 flex justify-center">
+      <motion.div 
+        className="mt-20 flex justify-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
         <Button size="lg" variant="outline">
           Learn More About Modules
         </Button>
-      </div>
+      </motion.div>
     </SectionWrapper>
   );
 }

@@ -39,60 +39,100 @@ const assets = [
   },
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
 export function Marketplace() {
   return (
     <SectionWrapper id="marketplace">
-      <div className="text-center">
+      <motion.div 
+        className="text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={itemVariants}
+      >
         <h2 className="font-headline text-4xl font-bold md:text-5xl">
           Marketplace of Symbols
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Sell, showcase, and collect symbolic assets — digital & physical. Each asset is tracked with Ekam Lipi provenance, ensuring uniqueness.
         </p>
-      </div>
-      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      </motion.div>
+      <motion.div 
+        className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+      >
         {assets.map((asset) => (
-          <Card
-            key={asset.id}
-            className="group overflow-hidden border-primary/20 bg-card/50 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
-          >
-            {asset.image && (
-              <div className="overflow-hidden">
-                <Image
-                  src={asset.image.imageUrl}
-                  alt={asset.image.description}
-                  data-ai-hint={asset.image.imageHint}
-                  width={600}
-                  height={600}
-                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-            )}
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle>{asset.name}</CardTitle>
-                <Badge variant="secondary" className="bg-secondary/20 text-secondary-foreground">{asset.type}</Badge>
-              </div>
-              <CardDescription className="pt-2 text-lg font-semibold text-primary">
-                {asset.price}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                A unique symbolic representation crafted within the Symbi0n
-                ecosystem, holding deep personal and digital significance.
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                <Layers className="mr-2 h-4 w-4" />
-                Place Bid
-              </Button>
-            </CardFooter>
-          </Card>
+          <motion.div key={asset.id} variants={itemVariants}>
+            <Card
+              className="group overflow-hidden border-primary/20 bg-card/50 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+            >
+              {asset.image && (
+                <div className="overflow-hidden">
+                  <Image
+                    src={asset.image.imageUrl}
+                    alt={asset.image.description}
+                    data-ai-hint={asset.image.imageHint}
+                    width={600}
+                    height={600}
+                    className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle>{asset.name}</CardTitle>
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary-foreground">{asset.type}</Badge>
+                </div>
+                <CardDescription className="pt-2 text-lg font-semibold text-primary">
+                  {asset.price}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  A unique symbolic representation crafted within the Symbi0n
+                  ecosystem, holding deep personal and digital significance.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Layers className="mr-2 h-4 w-4" />
+                  Place Bid
+                </Button>
+              </CardFooter>
+            </Card>
+          </motion.div>
         ))}
-      </div>
-      <div className="mt-12 flex justify-center gap-4">
+      </motion.div>
+      <motion.div 
+        className="mt-12 flex justify-center gap-4"
+        initial={{opacity: 0, y: 20}}
+        whileInView={{opacity: 1, y: 0}}
+        viewport={{once: true, amount: 0.5}}
+        transition={{duration: 0.5}}
+      >
         <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
           Browse Auction
         </Button>
@@ -100,7 +140,7 @@ export function Marketplace() {
           <List className="mr-2 h-4 w-4" />
           List Your Asset
         </Button>
-      </div>
+      </motion.div>
     </SectionWrapper>
   );
 }
