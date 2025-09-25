@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "glyph-1",
+      "description": "Abstract glowing glyph for asset 1",
+      "imageUrl": "https://images.unsplash.com/photo-1617280196904-8e0a4ba6ce95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMG5lb258ZW58MHx8fHwxNzU4NzIwMzE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract neon"
+    },
+    {
+      "id": "glyph-2",
+      "description": "Abstract glowing glyph for asset 2",
+      "imageUrl": "https://images.unsplash.com/photo-1715939477777-68bdb527f14a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnZW9tZXRyaWMlMjBsaWdodHxlbnwwfHx8fDE3NTg4MDgwNjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "geometric light"
+    },
+    {
+      "id": "glyph-3",
+      "description": "Abstract glowing glyph for asset 3",
+      "imageUrl": "https://images.unsplash.com/photo-1643323437685-535925c1b7b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx2aW9sZXQlMjBmcmFjdGFsfGVufDB8fHx8MTc1ODgwODA2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "violet fractal"
+    },
+    {
+      "id": "helix-demo-glyph",
+      "description": "Personalized Lipi glyph for HELIX demo",
+      "imageUrl": "https://images.unsplash.com/photo-1619618020341-5de1cad0d965?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmdXR1cmlzdGljJTIwc3ltYm9sfGVufDB8fHx8MTc1ODgwODA2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "futuristic symbol"
+    }
+  ]
 }

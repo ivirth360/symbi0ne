@@ -1,4 +1,5 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 export default {
   darkMode: ['class'],
@@ -8,10 +9,17 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Inter', ...fontFamily.sans],
+        headline: ['"Space Grotesk"', ...fontFamily.sans],
         code: ['monospace'],
       },
       colors: {
@@ -88,12 +96,36 @@ export default {
             height: '0',
           },
         },
+        glow: {
+          '0%, 100%': {
+            opacity: '0.7',
+            boxShadow:
+              '0 0 1rem -0.25rem hsl(var(--primary)), 0 0 2.5rem -0.5rem hsl(var(--accent))',
+          },
+          '50%': {
+            opacity: '1',
+            boxShadow:
+              '0 0 2rem -0.25rem hsl(var(--primary)), 0 0 5rem -0.5rem hsl(var(--accent))',
+          },
+        },
+        'subtle-pulse': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(106, 90, 205, 0.4)',
+          },
+          '70%': {
+            transform: 'scale(1.02)',
+            boxShadow: '0 0 0 10px rgba(106, 90, 205, 0)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        glow: 'glow 6s ease-in-out infinite',
+        'subtle-pulse': 'subtle-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 } satisfies Config;
