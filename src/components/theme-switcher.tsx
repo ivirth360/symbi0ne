@@ -1,8 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useTheme } from 'next-themes';
-import { useTheme as useCombinedTheme } from '@/components/theme-provider';
+import { useTheme } from '@/components/theme-provider';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -17,8 +16,7 @@ import {
 import { Moon, Sun, Palette, Droplet, Flame, Wind, Mountain, CircleDot, Asterisk } from 'lucide-react';
 
 export function ThemeSwitcher() {
-  const { setTheme } = useTheme();
-  const { setElementalTheme } = useCombinedTheme();
+  const { setTheme, setElementalTheme } = useTheme();
 
   return (
     <DropdownMenu>
@@ -54,7 +52,7 @@ export function ThemeSwitcher() {
                     <CircleDot className="mr-2 h-4 w-4" />
                     <span className="capitalize ml-2">Sh00nya</span>
                 </DropdownMenuItem>
-                 <DropdownMenuItem onClick={() => setElementalTheme('')}>
+                 <DropdownMenuItem onClick={() => setElementalTheme('default')}>
                     <Asterisk className="mr-2 h-4 w-4" />
                     <span className="capitalize ml-2">Default</span>
                 </DropdownMenuItem>

@@ -22,9 +22,10 @@ export function ElementalThemeProvider({ children }: { children: React.ReactNode
   const [elementalTheme, setElementalThemeState] = React.useState('theme-vriksha');
 
   React.useEffect(() => {
-    document.body.classList.remove(...elementalThemes);
-    if (elementalTheme) {
-      document.body.classList.add(elementalTheme);
+    const bodyClassList = document.body.classList;
+    bodyClassList.remove(...elementalThemes);
+    if (elementalTheme && elementalTheme !== 'default') {
+      bodyClassList.add(elementalTheme);
     }
   }, [elementalTheme]);
 
