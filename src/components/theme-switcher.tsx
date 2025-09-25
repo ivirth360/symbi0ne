@@ -21,40 +21,45 @@ export function ThemeSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <Palette className="h-[1.2rem] w-[1.2rem]" />
+        <Button
+            variant="outline"
+            size="icon"
+            className="fixed bottom-24 right-6 h-12 w-12 rounded-full border-border/50 bg-background/80 shadow-lg backdrop-blur-sm"
+        >
+          <Palette className="h-6 w-6" />
+          <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuSub>
             <DropdownMenuSubTrigger>
                 <Palette className="mr-2 h-4 w-4" />
-                <span>Themes</span>
+                <span>Elemental Themes</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
                  <DropdownMenuItem onClick={() => setElementalTheme('theme-vriksha')}>
                     <Mountain className="mr-2 h-4 w-4" />
-                    <span className="capitalize ml-2">Vriksha</span>
+                    <span>Vriksha</span>
                 </DropdownMenuItem>
                  <DropdownMenuItem onClick={() => setElementalTheme('theme-jal')}>
                     <Droplet className="mr-2 h-4 w-4" />
-                    <span className="capitalize ml-2">Jal</span>
+                    <span>Jal</span>
                 </DropdownMenuItem>
                  <DropdownMenuItem onClick={() => setElementalTheme('theme-agni')}>
                     <Flame className="mr-2 h-4 w-4" />
-                    <span className="capitalize ml-2">Agni</span>
+                    <span>Agni</span>
                 </DropdownMenuItem>
                  <DropdownMenuItem onClick={() => setElementalTheme('theme-vayu')}>
                     <Wind className="mr-2 h-4 w-4" />
-                    <span className="capitalize ml-2">Vayu</span>
+                    <span>Vayu</span>
                 </DropdownMenuItem>
                  <DropdownMenuItem onClick={() => setElementalTheme('theme-sh00nya')}>
                     <CircleDot className="mr-2 h-4 w-4" />
-                    <span className="capitalize ml-2">Sh00nya</span>
+                    <span>Sh00nya</span>
                 </DropdownMenuItem>
                  <DropdownMenuItem onClick={() => setElementalTheme('default')}>
                     <Asterisk className="mr-2 h-4 w-4" />
-                    <span className="capitalize ml-2">Default</span>
+                    <span>Default</span>
                 </DropdownMenuItem>
             </DropdownMenuSubContent>
         </DropdownMenuSub>

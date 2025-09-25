@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/sheet"
 import { Menu, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import { ThemeSwitcher } from './theme-switcher';
 
 const navLinks = [
   { href: '#about', label: 'About' },
@@ -40,7 +39,6 @@ export function Header() {
           </ul>
         </nav>
         <div className="ml-auto flex items-center space-x-2">
-          <ThemeSwitcher />
           <Button asChild className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex">
             <Link href="#contact">
               Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />

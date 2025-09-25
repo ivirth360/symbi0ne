@@ -4,6 +4,7 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SymbiFAB } from '@/components/symbi-fab';
 import { ThemeProvider, ElementalThemeProvider } from '@/components/theme-provider';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
               <main className="flex-1">{children}</main>
               <Footer />
               <Toaster />
+              <ThemeSwitcher />
               <SymbiFAB />
             </div>
           </ElementalThemeProvider>
