@@ -84,7 +84,7 @@ export function SymbiFAB() {
   return (
     <>
       <Button
-        className="animate-subtle-pulse fixed bottom-6 right-6 h-16 w-16 rounded-full bg-accent text-accent-foreground shadow-2xl shadow-accent/40 hover:bg-accent/90"
+        className="animate-subtle-pulse fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-accent-foreground shadow-2xl shadow-accent/40"
         onClick={() => setIsOpen(true)}
       >
         <Sparkles className="h-8 w-8" />
@@ -92,7 +92,7 @@ export function SymbiFAB() {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-2xl border-primary/20 bg-card/80 backdrop-blur-sm">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-primary">
+            <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-gradient">
               <Bot className="h-8 w-8" />
               <span>Chat with SYMBI</span>
             </DialogTitle>
@@ -123,7 +123,7 @@ export function SymbiFAB() {
                       className={cn(
                         'max-w-sm rounded-lg px-4 py-2 text-sm md:max-w-md',
                         message.role === 'user'
-                          ? 'bg-accent text-accent-foreground'
+                          ? 'bg-gradient-to-r from-primary to-secondary text-accent-foreground'
                           : 'bg-muted text-muted-foreground'
                       )}
                     >
@@ -185,7 +185,7 @@ export function SymbiFAB() {
                 size="icon"
                 onClick={handleSend}
                 disabled={isPending || !input.trim()}
-                className="h-11 w-11 flex-shrink-0 bg-accent text-accent-foreground hover:bg-accent/90"
+                className="h-11 w-11 flex-shrink-0"
               >
                 <Send className="h-5 w-5" />
               </Button>

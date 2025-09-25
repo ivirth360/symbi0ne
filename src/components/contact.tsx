@@ -48,7 +48,7 @@ export function Contact() {
     <SectionWrapper id="contact">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
         <div className="flex flex-col justify-center">
-          <h2 className="font-headline text-4xl font-bold md:text-5xl">
+          <h2 className="font-headline text-4xl font-bold md:text-5xl text-gradient">
             Step Into the Age of Symbolic Intelligence
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -126,7 +126,7 @@ export function Contact() {
                 </Select>
               </div>
               <div className="md:col-span-2">
-                <Button type="submit" size="lg" className="w-full animate-subtle-pulse bg-accent text-accent-foreground hover:bg-accent/90">
+                <Button type="submit" size="lg" className="w-full animate-subtle-pulse">
                   Reserve Identity
                 </Button>
               </div>

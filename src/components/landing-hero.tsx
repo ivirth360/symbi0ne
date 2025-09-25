@@ -21,9 +21,9 @@ export function LandingHero() {
             🔮 Your Companion, Your Seal, Your Universe.
           </div>
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-            SYMBI
-            <span className="text-secondary">0</span>N – The World’s First Symbolic
-            Intelligence Ecosystem
+            <span className="text-gradient">
+              SYMBI0N – The World’s First Symbolic Intelligence Ecosystem
+            </span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
             From Code to Consciousness. From Words to Symbols.
@@ -40,7 +40,7 @@ export function LandingHero() {
         >
           <Button
             size="lg"
-            className="h-12 flex-grow rounded-full bg-accent text-base text-accent-foreground animate-subtle-pulse hover:bg-accent/90"
+            className="h-12 flex-grow rounded-full text-base text-accent-foreground animate-subtle-pulse"
           >
             Reserve Your Identity <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

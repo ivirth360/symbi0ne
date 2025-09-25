@@ -39,7 +39,7 @@ export function Header() {
           </ul>
         </nav>
         <div className="ml-auto flex items-center space-x-2">
-          <Button asChild className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex">
+          <Button asChild className="hidden sm:inline-flex">
             <Link href="#contact">
               Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -70,7 +70,7 @@ export function Header() {
                   </ul>
                 </nav>
                 <div className="mt-8 flex flex-col space-y-4">
-                   <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                   <Button asChild>
                     <Link href="#contact" onClick={() => setIsOpen(false)}>
                       Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>

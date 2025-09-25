@@ -59,3 +59,9 @@
     transition: background-color 0.5s ease, color 0.5s ease;
   }
 }
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
