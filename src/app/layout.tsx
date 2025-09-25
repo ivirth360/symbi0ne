@@ -4,6 +4,7 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { SymbiFAB } from '@/components/symbi-fab';
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -26,16 +27,21 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-body antialiased'
-        )}
-      >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <Toaster />
-        <SymbiFAB />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="vriksha"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className={cn('min-h-screen bg-background font-body antialiased')}>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <Toaster />
+            <SymbiFAB />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
