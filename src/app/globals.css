@@ -52,14 +52,14 @@
     --ring-hsl: 45 100% 51%;
   }
 
-  .theme-jal.dark {
+  .theme-jal.dark, html.dark .theme-jal {
     --background-start-hsl: 210 50% 10%;
     --background-end-hsl: 210 50% 15%;
     --primary-hsl: 190 80% 65%;
     --secondary-hsl: 220 70% 75%;
     --accent-hsl: 180 100% 50%;
   }
-  .theme-jal.light {
+  .theme-jal.light, html.light .theme-jal {
     --background-start-hsl: 210 50% 95%;
     --background-end-hsl: 210 50% 98%;
     --primary-hsl: 190 60% 45%;
@@ -67,14 +67,14 @@
     --accent-hsl: 180 80% 40%;
   }
 
-  .theme-agni.dark {
+  .theme-agni.dark, html.dark .theme-agni {
     --background-start-hsl: 20 60% 8%;
     --background-end-hsl: 20 60% 12%;
     --primary-hsl: 30 100% 60%;
     --secondary-hsl: 10 90% 55%;
     --accent-hsl: 45 100% 50%;
   }
-  .theme-agni.light {
+  .theme-agni.light, html.light .theme-agni {
     --background-start-hsl: 20 60% 96%;
     --background-end-hsl: 20 60% 99%;
     --primary-hsl: 30 80% 50%;
@@ -82,14 +82,14 @@
     --accent-hsl: 45 90% 45%;
   }
 
-  .theme-vayu.dark {
+  .theme-vayu.dark, html.dark .theme-vayu {
     --background-start-hsl: 190 20% 15%;
     --background-end-hsl: 190 20% 20%;
     --primary-hsl: 210 50% 70%;
     --secondary-hsl: 180 30% 80%;
     --accent-hsl: 200 100% 70%;
   }
-  .theme-vayu.light {
+  .theme-vayu.light, html.light .theme-vayu {
     --background-start-hsl: 190 20% 95%;
     --background-end-hsl: 190 20% 98%;
     --primary-hsl: 210 40% 50%;
@@ -97,14 +97,14 @@
     --accent-hsl: 200 80% 55%;
   }
   
-  .theme-vriksha.dark {
+  .theme-vriksha.dark, html.dark .theme-vriksha {
     --background-start-hsl: 260 52% 11%;
     --background-end-hsl: 260 52% 16%;
     --primary-hsl: 43 100% 70%;
     --secondary-hsl: 187 70% 62%;
     --accent-hsl: 14 100% 62%;
   }
-  .theme-vriksha.light {
+  .theme-vriksha.light, html.light .theme-vriksha {
     --background-start-hsl: 0 0% 98%;
     --background-end-hsl: 0 0% 100%;
     --primary-hsl: 43 90% 55%;
@@ -112,14 +112,14 @@
     --accent-hsl: 14 90% 55%;
   }
 
-  .theme-sh00nya.dark {
+  .theme-sh00nya.dark, html.dark .theme-sh00nya {
     --background-start-hsl: 0 0% 5%;
     --background-end-hsl: 0 0% 10%;
     --primary-hsl: 0 0% 80%;
     --secondary-hsl: 0 0% 50%;
     --accent-hsl: 0 0% 100%;
   }
-  .theme-sh00nya.light {
+  .theme-sh00nya.light, html.light .theme-sh00nya {
     --background-start-hsl: 0 0% 100%;
     --background-end-hsl: 0 0% 97%;
     --primary-hsl: 0 0% 20%;
