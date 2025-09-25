@@ -58,18 +58,22 @@ export function SymbiFAB() {
     setInput('');
 
     startTransition(async () => {
-      const result = await symbi({ query: currentInput });
-      if (result.response) {
-        const botMessage: Message = { 
-          role: 'bot', 
-          content: result.response,
-          imageUrl: result.imageUrl,
-          imageAlt: result.imageAlt,
-          imageHint: result.imageHint,
-        };
-        setMessages((prev) => [...prev, botMessage]);
-      } else {
-        toast({
+      try {
+        const result = await symbi({ query: currentInput });
+        if (result.response) {
+          const botMessage: Message = { 
+            role: 'bot', 
+            content: result.response,
+            imageUrl: result.imageUrl,
+            imageAlt: result.imageAlt,
+            imageHint: result.imageHint,
+          };
+          setMessages((prev) => [...prev, botMessage]);
+        } else {
+          throw new Error('No response from companion.');
+        }
+      } catch (error) {
+         toast({
           title: 'Companion Error',
           description: 'Could not get a response. Please try again.',
           variant: 'destructive',
@@ -90,7 +94,7 @@ export function SymbiFAB() {
         <Sparkles className="h-8 w-8" />
       </Button>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl border-primary/20 backdrop-blur-sm">
+        <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-gradient">
               <Bot className="h-8 w-8" />
@@ -102,7 +106,7 @@ export function SymbiFAB() {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col space-y-4">
-            <ScrollArea className="h-[50vh] w-full rounded-md border border-border/50 bg-background/50 p-4" ref={scrollAreaRef}>
+            <ScrollArea className="h-[50vh] w-full rounded-md border p-4" ref={scrollAreaRef}>
               <div className="space-y-4">
                 {messages.map((message, index) => (
                   <div
@@ -127,7 +131,7 @@ export function SymbiFAB() {
                           : 'bg-muted text-muted-foreground'
                       )}
                     >
-                      <p>{message.content}</p>
+                      <p className="whitespace-pre-wrap">{message.content}</p>
                       {message.imageUrl && (
                          <motion.div
                             key="generated"

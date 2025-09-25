@@ -22,30 +22,8 @@
     --destructive-foreground-hsl: 0 0% 98%;
     --border-hsl: 240 5.9% 90%;
     --input-hsl: 240 5.9% 90%;
-    --ring-hsl: 240 10% 3.9%;
+    --ring-hsl: 45 96% 51%;
     --radius: 0.5rem;
-  }
-
-  body {
-    --background: hsl(var(--background-hsl));
-    --foreground: hsl(var(--foreground-hsl));
-    --card: hsl(var(--card-hsl));
-    --card-foreground: hsl(var(--card-foreground-hsl));
-    --popover: hsl(var(--popover-hsl));
-    --popover-foreground: hsl(var(--popover-foreground-hsl));
-    --primary: hsl(var(--primary-hsl));
-    --primary-foreground: hsl(var(--primary-foreground-hsl));
-    --secondary: hsl(var(--secondary-hsl));
-    --secondary-foreground: hsl(var(--secondary-foreground-hsl));
-    --muted: hsl(var(--muted-hsl));
-    --muted-foreground: hsl(var(--muted-foreground-hsl));
-    --accent: hsl(var(--accent-hsl));
-    --accent-foreground: hsl(var(--accent-foreground-hsl));
-    --destructive: hsl(var(--destructive-hsl));
-    --destructive-foreground: hsl(var(--destructive-foreground-hsl));
-    --border: hsl(var(--border-hsl));
-    --input: hsl(var(--input-hsl));
-    --ring: hsl(var(--ring-hsl));
   }
   
   * {
@@ -53,7 +31,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 

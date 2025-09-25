@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"Space Grotesk"', ...fontFamily.sans],
-        headline: ['"Space Grotesk"', ...fontFamily.sans],
+        body: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        headline: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
         border: 'hsl(var(--border-hsl))',
@@ -85,33 +85,20 @@ export default {
             height: '0',
           },
         },
-        glow: {
-          '0%, 100%': {
-            opacity: '0.7',
-            boxShadow:
-              '0 0 1rem -0.25rem hsl(var(--primary-hsl)), 0 0 2.5rem -0.5rem hsl(var(--secondary-hsl))',
-          },
-          '50%': {
-            opacity: '1',
-            boxShadow:
-              '0 0 2rem -0.25rem hsl(var(--primary-hsl)), 0 0 5rem -0.5rem hsl(var(--secondary-hsl))',
-          },
-        },
         'subtle-pulse': {
           '0%, 100%': {
             transform: 'scale(1)',
-            boxShadow: '0 0 0 0 hsla(var(--accent-hsl), 0.7)',
+            boxShadow: '0 0 0 0 hsla(var(--accent-hsl), 0.5)',
           },
           '70%': {
             transform: 'scale(1.02)',
-            boxShadow: '0 0 0 10px hsla(var(--accent-hsl), 0)',
+            boxShadow: '0 0 0 12px hsla(var(--accent-hsl), 0)',
           },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        glow: 'glow 6s ease-in-out infinite',
         'subtle-pulse': 'subtle-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
