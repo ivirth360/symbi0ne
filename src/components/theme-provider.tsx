@@ -19,7 +19,7 @@ type ElementalThemeContextType = {
 const ElementalThemeContext = React.createContext<ElementalThemeContextType | undefined>(undefined);
 
 export function ElementalThemeProvider({ children }: { children: React.ReactNode }) {
-  const [elementalTheme, setElementalThemeState] = React.useState('theme-vriksha');
+  const [elementalTheme, setElementalThemeState] = React.useState('default');
 
   React.useEffect(() => {
     const bodyClassList = document.body.classList;
