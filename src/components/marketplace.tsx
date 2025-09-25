@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { SectionWrapper } from './section-wrapper';
-import { Layers } from 'lucide-react';
+import { Layers, List } from 'lucide-react';
 
 const assets = [
   {
@@ -42,11 +42,10 @@ export function Marketplace() {
     <SectionWrapper id="marketplace">
       <div className="text-center">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">
-          Symbolic Asset Marketplace
+          Marketplace of Symbols
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Sell, showcase, and collect symbolic assets. Each piece is verified
-          with Ekam Lipi provenance, ensuring authenticity and uniqueness.
+          Sell, showcase, and collect symbolic assets — digital & physical. Each asset is tracked with Ekam Lipi provenance, ensuring uniqueness.
         </p>
       </div>
       <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -90,6 +89,15 @@ export function Marketplace() {
             </CardFooter>
           </Card>
         ))}
+      </div>
+      <div className="mt-12 flex justify-center gap-4">
+        <Button size="lg">
+          Browse Auction
+        </Button>
+        <Button size="lg" variant="outline">
+          <List className="mr-2 h-4 w-4" />
+          List Your Asset
+        </Button>
       </div>
     </SectionWrapper>
   );

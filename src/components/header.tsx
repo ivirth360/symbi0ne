@@ -3,11 +3,12 @@ import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
-  { href: '#helix', label: 'HELIX Demo' },
+  { href: '#about', label: 'About' },
+  { href: '#services', label: 'Services' },
+  { href: '#modules', label: 'Modules' },
+  { href: '#membership', label: 'Memberships' },
   { href: '#marketplace', label: 'Marketplace' },
-  { href: '#analysis', label: 'Analysis' },
-  { href: '#companion', label: 'Companion' },
-  { href: '#membership', label: 'Membership' },
+  { href: '#roadmap', label: 'Roadmap' },
 ];
 
 export function Header() {

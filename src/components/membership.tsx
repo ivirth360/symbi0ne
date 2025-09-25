@@ -13,43 +13,42 @@ import { SectionWrapper } from './section-wrapper';
 const tiers = [
   {
     name: 'Individual Basic',
-    price: '$9',
-    period: '/ month',
-    features: [
-      'Reserve SYMBI0N Identity',
-      'Create 1 HELIX',
-      'Basic Asset Management',
-      'Marketplace Access',
-    ],
-    cta: 'Choose Basic',
+    price: '₹5,000',
+    period: '/ year',
+    features: ['UID', 'HELIX', 'SYMBI Companion'],
+    cta: 'Subscribe Now',
     isPopular: false,
   },
   {
     name: 'Individual Pro',
-    price: '$29',
-    period: '/ month',
-    features: [
-      'All Basic Features',
-      'Create up to 5 HELIXs',
-      'Advanced Asset Management',
-      'SYMBI Companion Pro',
-      'Symbolic Analysis Tool',
-    ],
-    cta: 'Go Pro',
+    price: '₹15,000',
+    period: '/ year',
+    features: ['UID', 'Asset Management', 'Auction Access'],
+    cta: 'Subscribe Now',
     isPopular: true,
   },
   {
-    name: 'Brand & Enterprise',
-    price: 'Custom',
+    name: 'Brand Basic',
+    price: '₹50,000',
+    period: '/ year',
+    features: ['Identity', 'SYMBI Integration'],
+    cta: 'Subscribe Now',
+    isPopular: false,
+  },
+  {
+    name: 'Brand Pro',
+    price: '₹2,50,000',
+    period: '/ year',
+    features: ['Full Identity', 'AI', 'Assets', 'Auction'],
+    cta: 'Subscribe Now',
+    isPopular: false,
+  },
+  {
+    name: 'Enterprise',
+    price: '₹10,00,000+',
     period: '',
-    features: [
-      'All Pro Features',
-      'Unlimited HELIXs',
-      'Brand Identity Management',
-      'Dedicated Support',
-      'Enterprise Integrations',
-    ],
-    cta: 'Contact Us',
+    features: ['Custom AI', 'Modeling', 'Research'],
+    cta: 'Book Consultation',
     isPopular: false,
   },
 ];
@@ -59,14 +58,14 @@ export function Membership() {
     <SectionWrapper id="membership">
       <div className="text-center">
         <h2 className="font-headline text-4xl font-bold md:text-5xl">
-          Membership Tiers
+          Join the Awakening
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Choose the plan that aligns with your journey into the symbolic
           ecosystem. Unlock more features as you grow.
         </p>
       </div>
-      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {tiers.map((tier) => (
           <Card
             key={tier.name}

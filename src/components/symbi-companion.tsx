@@ -28,7 +28,7 @@ export function SymbiCompanion() {
     {
       role: 'bot',
       content:
-        'Welcome to the Symbi0n Ecosystem. How can I guide you today?',
+        'Ask me about your symbolic identity or assets.',
     },
   ]);
   const [input, setInput] = useState('');
