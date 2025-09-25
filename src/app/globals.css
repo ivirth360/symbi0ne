@@ -4,167 +4,160 @@
 
 @layer base {
   :root,
-  html,
-  body {
-    --background: 260 52% 11%; /* Deep Cosmic Purple */
-    --foreground: 0 0% 96%; /* Soft White */
-    --card: 259 42% 18%;
-    --card-foreground: 0 0% 96%;
-    --popover: 260 52% 11%;
-    --popover-foreground: 0 0% 96%;
-    --primary: 43 100% 70%; /* Neon Gold */
-    --primary-foreground: 260 52% 11%;
-    --secondary: 187 70% 62%; /* Electric Cyan */
-    --secondary-foreground: 260 52% 11%;
-    --muted: 259 42% 28%;
-    --muted-foreground: 0 0% 80%; /* Light Gray */
-    --accent: 14 100% 62%; /* Warm Diwali Orange */
-    --accent-foreground: 0 0% 96%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 96%;
-    --border: 259 42% 28%;
-    --input: 259 42% 28%;
-    --ring: 43 100% 70%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+  html.light,
+  body.light {
+    --background-start-hsl: 0 0% 98%;
+    --background-end-hsl: 0 0% 95%;
+    --foreground-hsl: 240 10% 4%;
+    --card-hsl: 0 0% 100%;
+    --card-foreground-hsl: 240 10% 4%;
+    --popover-hsl: 0 0% 100%;
+    --popover-foreground-hsl: 240 10% 4%;
+    --primary-hsl: 45 100% 51%; /* Cosmic Gold */
+    --primary-foreground-hsl: 240 10% 4%;
+    --secondary-hsl: 347 77% 49%; /* Crimson Red */
+    --secondary-foreground-hsl: 0 0% 98%;
+    --muted-hsl: 0 0% 94%;
+    --muted-foreground-hsl: 240 5% 45%;
+    --accent-hsl: 187 70% 62%; /* Electric Cyan for accents */
+    --accent-foreground-hsl: 240 10% 4%;
+    --destructive-hsl: 0 84% 60%;
+    --destructive-foreground-hsl: 0 0% 98%;
+    --border-hsl: 0 0% 90%;
+    --input-hsl: 0 0% 90%;
+    --ring-hsl: 45 100% 51%;
   }
 
   html.dark,
   body.dark {
-    --background: 260 52% 11%;
-    --foreground: 0 0% 96%;
-    --card: 259 42% 18%;
-    --card-foreground: 0 0% 96%;
-    --popover: 260 52% 11%;
-    --popover-foreground: 0 0% 96%;
-    --primary: 43 100% 70%;
-    --primary-foreground: 260 52% 11%;
-    --secondary: 187 70% 62%;
-    --secondary-foreground: 260 52% 11%;
-    --muted: 259 42% 28%;
-    --muted-foreground: 0 0% 80%;
-    --accent: 14 100% 62%;
-    --accent-foreground: 0 0% 96%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 96%;
-    --border: 259 42% 28%;
-    --input: 259 42% 28%;
-    --ring: 43 100% 70%;
-  }
- 
-  html.light,
-  body.light {
-    --background: 0 0% 98%;
-    --foreground: 260 52% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 260 52% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 260 52% 11%;
-    --primary: 43 90% 55%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 187 60% 45%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 94%;
-    --muted-foreground: 260 52% 31%;
-    --accent: 14 90% 55%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 43 90% 55%;
+    --background-start-hsl: 240 10% 4%;
+    --background-end-hsl: 240 10% 10%;
+    --foreground-hsl: 0 0% 98%;
+    --card-hsl: 240 10% 12%;
+    --card-foreground-hsl: 0 0% 98%;
+    --popover-hsl: 240 10% 4%;
+    --popover-foreground-hsl: 0 0% 98%;
+    --primary-hsl: 45 100% 51%; /* Cosmic Gold */
+    --primary-foreground-hsl: 240 10% 4%;
+    --secondary-hsl: 347 87% 69%; /* Lighter Crimson Red for dark mode */
+    --secondary-foreground-hsl: 0 0% 98%;
+    --muted-hsl: 240 5% 15%;
+    --muted-foreground-hsl: 0 0% 80%;
+    --accent-hsl: 187 70% 62%; /* Electric Cyan */
+    --accent-foreground-hsl: 240 10% 4%;
+    --destructive-hsl: 0 63% 31%;
+    --destructive-foreground-hsl: 0 0% 98%;
+    --border-hsl: 240 5% 25%;
+    --input-hsl: 240 5% 25%;
+    --ring-hsl: 45 100% 51%;
   }
 
   .theme-jal.dark {
-    --background: 210 50% 10%;
-    --primary: 190 80% 65%;
-    --secondary: 220 70% 75%;
-    --accent: 180 100% 50%;
+    --background-start-hsl: 210 50% 10%;
+    --background-end-hsl: 210 50% 15%;
+    --primary-hsl: 190 80% 65%;
+    --secondary-hsl: 220 70% 75%;
+    --accent-hsl: 180 100% 50%;
   }
   .theme-jal.light {
-    --background: 210 50% 95%;
-    --primary: 190 60% 45%;
-    --secondary: 220 50% 55%;
-    --accent: 180 80% 40%;
+    --background-start-hsl: 210 50% 95%;
+    --background-end-hsl: 210 50% 98%;
+    --primary-hsl: 190 60% 45%;
+    --secondary-hsl: 220 50% 55%;
+    --accent-hsl: 180 80% 40%;
   }
 
   .theme-agni.dark {
-    --background: 20 60% 8%;
-    --primary: 30 100% 60%;
-    --secondary: 10 90% 55%;
-    --accent: 45 100% 50%;
+    --background-start-hsl: 20 60% 8%;
+    --background-end-hsl: 20 60% 12%;
+    --primary-hsl: 30 100% 60%;
+    --secondary-hsl: 10 90% 55%;
+    --accent-hsl: 45 100% 50%;
   }
   .theme-agni.light {
-    --background: 20 60% 96%;
-    --primary: 30 80% 50%;
-    --secondary: 10 70% 45%;
-    --accent: 45 90% 45%;
+    --background-start-hsl: 20 60% 96%;
+    --background-end-hsl: 20 60% 99%;
+    --primary-hsl: 30 80% 50%;
+    --secondary-hsl: 10 70% 45%;
+    --accent-hsl: 45 90% 45%;
   }
 
   .theme-vayu.dark {
-    --background: 190 20% 15%;
-    --primary: 210 50% 70%;
-    --secondary: 180 30% 80%;
-    --accent: 200 100% 70%;
+    --background-start-hsl: 190 20% 15%;
+    --background-end-hsl: 190 20% 20%;
+    --primary-hsl: 210 50% 70%;
+    --secondary-hsl: 180 30% 80%;
+    --accent-hsl: 200 100% 70%;
   }
   .theme-vayu.light {
-    --background: 190 20% 95%;
-    --primary: 210 40% 50%;
-    --secondary: 180 25% 60%;
-    --accent: 200 80% 55%;
+    --background-start-hsl: 190 20% 95%;
+    --background-end-hsl: 190 20% 98%;
+    --primary-hsl: 210 40% 50%;
+    --secondary-hsl: 180 25% 60%;
+    --accent-hsl: 200 80% 55%;
   }
   
   .theme-vriksha.dark {
-    --background: 260 52% 11%;
-    --primary: 43 100% 70%;
-    --secondary: 187 70% 62%;
-    --accent: 14 100% 62%;
+    --background-start-hsl: 260 52% 11%;
+    --background-end-hsl: 260 52% 16%;
+    --primary-hsl: 43 100% 70%;
+    --secondary-hsl: 187 70% 62%;
+    --accent-hsl: 14 100% 62%;
   }
   .theme-vriksha.light {
-     --background: 0 0% 98%;
-    --foreground: 260 52% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 260 52% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 260 52% 11%;
-    --primary: 43 90% 55%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 187 60% 45%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 94%;
-    --muted-foreground: 260 52% 31%;
-    --accent: 14 90% 55%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 43 90% 55%;
+    --background-start-hsl: 0 0% 98%;
+    --background-end-hsl: 0 0% 100%;
+    --primary-hsl: 43 90% 55%;
+    --secondary-hsl: 187 60% 45%;
+    --accent-hsl: 14 90% 55%;
   }
 
   .theme-sh00nya.dark {
-    --background: 0 0% 5%;
-    --primary: 0 0% 80%;
-    --secondary: 0 0% 50%;
-    --accent: 0 0% 100%;
+    --background-start-hsl: 0 0% 5%;
+    --background-end-hsl: 0 0% 10%;
+    --primary-hsl: 0 0% 80%;
+    --secondary-hsl: 0 0% 50%;
+    --accent-hsl: 0 0% 100%;
   }
   .theme-sh00nya.light {
-    --background: 0 0% 100%;
-    --primary: 0 0% 20%;
-    --secondary: 0 0% 50%;
-    --accent: 0 0% 0%;
+    --background-start-hsl: 0 0% 100%;
+    --background-end-hsl: 0 0% 97%;
+    --primary-hsl: 0 0% 20%;
+    --secondary-hsl: 0 0% 50%;
+    --accent-hsl: 0 0% 0%;
   }
 }
 
 @layer base {
+  :root {
+    --background: hsl(var(--background-start-hsl));
+    --foreground: hsl(var(--foreground-hsl));
+    --card: hsl(var(--card-hsl));
+    --card-foreground: hsl(var(--card-foreground-hsl));
+    --popover: hsl(var(--popover-hsl));
+    --popover-foreground: hsl(var(--popover-foreground-hsl));
+    --primary: hsl(var(--primary-hsl));
+    --primary-foreground: hsl(var(--primary-foreground-hsl));
+    --secondary: hsl(var(--secondary-hsl));
+    --secondary-foreground: hsl(var(--secondary-foreground-hsl));
+    --muted: hsl(var(--muted-hsl));
+    --muted-foreground: hsl(var(--muted-foreground-hsl));
+    --accent: hsl(var(--accent-hsl));
+    --accent-foreground: hsl(var(--accent-foreground-hsl));
+    --destructive: hsl(var(--destructive-hsl));
+    --destructive-foreground: hsl(var(--destructive-foreground-hsl));
+    --border: hsl(var(--border-hsl));
+    --input: hsl(var(--input-hsl));
+    --ring: hsl(var(--ring-hsl));
+    --radius: 0.5rem;
+  }
+ 
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(to bottom right, hsl(var(--background-start-hsl)), hsl(var(--background-end-hsl)));
     transition: background-color 0.5s ease, color 0.5s ease;
   }
 }

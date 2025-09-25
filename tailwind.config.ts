@@ -22,55 +22,45 @@ export default {
         headline: ['"Space Grotesk"', ...fontFamily.sans],
       },
       colors: {
+        border: 'hsl(var(--border-hsl))',
+        input: 'hsl(var(--input-hsl))',
+        ring: 'hsl(var(--ring-hsl))',
         background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
+        foreground: 'hsl(var(--foreground-hsl))',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: 'hsl(var(--primary-hsl))',
+          foreground: 'hsl(var(--primary-foreground-hsl))',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: 'hsl(var(--secondary-hsl))',
+          foreground: 'hsl(var(--secondary-foreground-hsl))',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          DEFAULT: 'hsl(var(--destructive-hsl))',
+          foreground: 'hsl(var(--destructive-foreground-hsl))',
         },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
+        muted: {
+          DEFAULT: 'hsl(var(--muted-hsl))',
+          foreground: 'hsl(var(--muted-foreground-hsl))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent-hsl))',
+          foreground: 'hsl(var(--accent-foreground-hsl))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover-hsl))',
+          foreground: 'hsl(var(--popover-foreground-hsl))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card-hsl))',
+          foreground: 'hsl(var(--card-foreground-hsl))',
+        },
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))',
         },
       },
       borderRadius: {
@@ -99,22 +89,22 @@ export default {
           '0%, 100%': {
             opacity: '0.7',
             boxShadow:
-              '0 0 1rem -0.25rem hsl(var(--primary)), 0 0 2.5rem -0.5rem hsl(var(--secondary))',
+              '0 0 1rem -0.25rem hsl(var(--primary-hsl)), 0 0 2.5rem -0.5rem hsl(var(--secondary-hsl))',
           },
           '50%': {
             opacity: '1',
             boxShadow:
-              '0 0 2rem -0.25rem hsl(var(--primary)), 0 0 5rem -0.5rem hsl(var(--secondary))',
+              '0 0 2rem -0.25rem hsl(var(--primary-hsl)), 0 0 5rem -0.5rem hsl(var(--secondary-hsl))',
           },
         },
         'subtle-pulse': {
           '0%, 100%': {
             transform: 'scale(1)',
-            boxShadow: '0 0 0 0 hsla(var(--accent), 0.7)',
+            boxShadow: '0 0 0 0 hsla(var(--accent-hsl), 0.7)',
           },
           '70%': {
             transform: 'scale(1.02)',
-            boxShadow: '0 0 0 10px hsla(var(--accent), 0)',
+            boxShadow: '0 0 0 10px hsla(var(--accent-hsl), 0)',
           },
         },
       },

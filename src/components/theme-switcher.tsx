@@ -20,15 +20,17 @@ const elementalThemes = ['theme-vriksha', 'theme-jal', 'theme-agni', 'theme-vayu
 export function ThemeSwitcher() {
   const { setTheme } = useTheme();
 
-  const handleThemeChange = (newTheme: string) => {
-    // Remove any existing elemental theme classes from the body
+  const handleElementalThemeChange = (newTheme: string) => {
     document.body.classList.remove(...elementalThemes);
-    const mainContent = document.querySelector('.min-h-screen');
-    if (mainContent) {
-        mainContent.classList.remove(...elementalThemes);
-        mainContent.classList.add(newTheme);
+    if (newTheme) {
+      document.body.classList.add(newTheme);
     }
   };
+
+  React.useEffect(() => {
+    // Set a default elemental theme
+    handleElementalThemeChange('theme-vriksha');
+  }, []);
 
 
   return (
@@ -45,25 +47,29 @@ export function ThemeSwitcher() {
                 <span>Themes</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
-                 <DropdownMenuItem onClick={() => handleThemeChange('theme-vriksha')}>
+                 <DropdownMenuItem onClick={() => handleElementalThemeChange('theme-vriksha')}>
                     <Mountain className="mr-2 h-4 w-4" />
                     <span className="capitalize ml-2">Vriksha</span>
                 </DropdownMenuItem>
-                 <DropdownMenuItem onClick={() => handleThemeChange('theme-jal')}>
+                 <DropdownMenuItem onClick={() => handleElementalThemeChange('theme-jal')}>
                     <Droplet className="mr-2 h-4 w-4" />
                     <span className="capitalize ml-2">Jal</span>
                 </DropdownMenuItem>
-                 <DropdownMenuItem onClick={() => handleThemeChange('theme-agni')}>
+                 <DropdownMenuItem onClick={() => handleElementalThemeChange('theme-agni')}>
                     <Flame className="mr-2 h-4 w-4" />
                     <span className="capitalize ml-2">Agni</span>
                 </DropdownMenuItem>
-                 <DropdownMenuItem onClick={() => handleThemeChange('theme-vayu')}>
+                 <DropdownMenuItem onClick={() => handleElementalThemeChange('theme-vayu')}>
                     <Wind className="mr-2 h-4 w-4" />
                     <span className="capitalize ml-2">Vayu</span>
                 </DropdownMenuItem>
-                 <DropdownMenuItem onClick={() => handleThemeChange('theme-sh00nya')}>
+                 <DropdownMenuItem onClick={() => handleElementalThemeChange('theme-sh00nya')}>
                     <CircleDot className="mr-2 h-4 w-4" />
                     <span className="capitalize ml-2">Sh00nya</span>
+                </DropdownMenuItem>
+                 <DropdownMenuItem onClick={() => handleElementalThemeChange('')}>
+                    <CircleDot className="mr-2 h-4 w-4" />
+                    <span className="capitalize ml-2">Default</span>
                 </DropdownMenuItem>
             </DropdownMenuSubContent>
         </DropdownMenuSub>

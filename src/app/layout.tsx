@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
-import { cn } from '@/lib/utils';
 import { SymbiFAB } from '@/components/symbi-fab';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
@@ -34,7 +33,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className={cn('min-h-screen bg-background font-body antialiased theme-vriksha')}>
+          <div className="min-h-screen bg-background font-body antialiased">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
