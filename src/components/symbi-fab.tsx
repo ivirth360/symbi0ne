@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
+  DialogDescription
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
@@ -17,7 +17,7 @@ import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
   role: 'user' | 'bot';
@@ -42,10 +42,12 @@ export function SymbiFAB() {
 
   useEffect(() => {
     if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTo({
-        top: scrollAreaRef.current.scrollHeight,
-        behavior: 'smooth',
-      });
+      setTimeout(() => {
+        scrollAreaRef.current?.scrollTo({
+          top: scrollAreaRef.current.scrollHeight,
+          behavior: 'smooth',
+        });
+      }, 100);
     }
   }, [messages]);
 
@@ -88,7 +90,7 @@ export function SymbiFAB() {
   return (
     <>
       <Button
-        className="animate-subtle-pulse fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-2xl shadow-accent/40"
+        className="animate-subtle-pulse fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-2xl shadow-accent/40 z-50"
         onClick={() => setIsOpen(true)}
       >
         <Sparkles className="h-8 w-8" />
@@ -107,72 +109,83 @@ export function SymbiFAB() {
           </DialogHeader>
           <div className="flex flex-col space-y-4">
             <ScrollArea className="h-[50vh] w-full rounded-md border p-4" ref={scrollAreaRef}>
-              <div className="space-y-4">
-                {messages.map((message, index) => (
-                  <div
-                    key={index}
-                    className={cn(
-                      'flex items-start gap-3',
-                      message.role === 'user' ? 'justify-end' : 'justify-start'
-                    )}
-                  >
-                    {message.role === 'bot' && (
+              <AnimatePresence initial={false}>
+                <motion.div className="space-y-4">
+                  {messages.map((message, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className={cn(
+                        'flex items-start gap-3',
+                        message.role === 'user' ? 'justify-end' : 'justify-start'
+                      )}
+                    >
+                      {message.role === 'bot' && (
+                        <Avatar className="h-8 w-8">
+                          <AvatarFallback className="bg-primary text-primary-foreground">
+                            <Bot className="h-5 w-5" />
+                          </AvatarFallback>
+                        </Avatar>
+                      )}
+                      <div
+                        className={cn(
+                          'max-w-[80%] rounded-lg px-4 py-2 text-sm',
+                          message.role === 'user'
+                            ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground'
+                            : 'bg-muted text-muted-foreground'
+                        )}
+                      >
+                        <p className="whitespace-pre-wrap">{message.content}</p>
+                        {message.imageUrl && (
+                           <motion.div
+                              key="generated"
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              className="text-center mt-4"
+                          >
+                              <Image
+                              src={message.imageUrl}
+                              alt={message.imageAlt || 'Generated Glyph'}
+                              data-ai-hint={message.imageHint || ''}
+                              width={300}
+                              height={300}
+                              className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/20 animate-in fade-in zoom-in-75 duration-700"
+                              />
+                          </motion.div>
+                        )}
+                      </div>
+                      {message.role === 'user' && (
+                        <Avatar className="h-8 w-8">
+                          <AvatarFallback>
+                            <User className="h-5 w-5" />
+                          </AvatarFallback>
+                        </Avatar>
+                      )}
+                    </motion.div>
+                  ))}
+                  {isPending && (
+                     <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex items-start gap-3"
+                      >
                       <Avatar className="h-8 w-8">
                         <AvatarFallback className="bg-primary text-primary-foreground">
                           <Bot className="h-5 w-5" />
                         </AvatarFallback>
                       </Avatar>
-                    )}
-                    <div
-                      className={cn(
-                        'max-w-sm rounded-lg px-4 py-2 text-sm md:max-w-md',
-                        message.role === 'user'
-                          ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground'
-                          : 'bg-muted text-muted-foreground'
-                      )}
-                    >
-                      <p className="whitespace-pre-wrap">{message.content}</p>
-                      {message.imageUrl && (
-                         <motion.div
-                            key="generated"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-center mt-4"
-                        >
-                            <Image
-                            src={message.imageUrl}
-                            alt={message.imageAlt || 'Generated Glyph'}
-                            data-ai-hint={message.imageHint || ''}
-                            width={300}
-                            height={300}
-                            className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/20 animate-in fade-in zoom-in-75 duration-700"
-                            />
-                        </motion.div>
-                      )}
-                    </div>
-                    {message.role === 'user' && (
-                      <Avatar className="h-8 w-8">
-                        <AvatarFallback>
-                          <User className="h-5 w-5" />
-                        </AvatarFallback>
-                      </Avatar>
-                    )}
-                  </div>
-                ))}
-                {isPending && (
-                  <div className="flex items-start gap-3">
-                    <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-primary text-primary-foreground">
-                        <Bot className="h-5 w-5" />
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex items-center space-x-2 rounded-lg bg-muted px-4 py-2 text-sm text-muted-foreground">
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>Thinking...</span>
-                    </div>
-                  </div>
-                )}
-              </div>
+                      <div className="flex items-center space-x-2 rounded-lg bg-muted px-4 py-2 text-sm text-muted-foreground">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        <span>Thinking...</span>
+                      </div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              </AnimatePresence>
             </ScrollArea>
             <div className="flex w-full items-center space-x-2">
               <Input

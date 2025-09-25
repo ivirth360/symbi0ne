@@ -11,8 +11,12 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1rem',
       screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
         '2xl': '1400px',
       },
     },
@@ -55,13 +59,6 @@ export default {
           DEFAULT: 'hsl(var(--card-hsl))',
           foreground: 'hsl(var(--card-foreground-hsl))',
         },
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -88,18 +85,18 @@ export default {
         'subtle-pulse': {
           '0%, 100%': {
             transform: 'scale(1)',
-            boxShadow: '0 0 0 0 hsla(var(--accent-hsl), 0.5)',
+            boxShadow: '0 0 0 0 hsla(var(--primary-hsl), 0.3)',
           },
           '70%': {
             transform: 'scale(1.02)',
-            boxShadow: '0 0 0 12px hsla(var(--accent-hsl), 0)',
+            boxShadow: '0 0 0 10px hsla(var(--primary-hsl), 0)',
           },
         },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.3s ease-out',
-        'accordion-up': 'accordion-up 0.3s ease-out',
-        'subtle-pulse': 'subtle-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'subtle-pulse': 'subtle-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

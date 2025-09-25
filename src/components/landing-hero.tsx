@@ -8,13 +8,13 @@ export function LandingHero() {
   return (
     <section className="relative overflow-hidden py-24 text-center md:py-32 lg:py-40">
       <div
-        className="absolute inset-0 z-0 opacity-10"
+        className="absolute inset-0 -z-10 opacity-10"
         style={{
           backgroundImage:
             'radial-gradient(circle at 50% 50%, hsl(var(--primary-hsl)), transparent 60%)',
         }}
       />
-      <div className="container relative z-10 mx-auto">
+      <div className="container relative z-10 mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export function LandingHero() {
           <div className="mb-6 font-headline text-lg font-bold text-primary">
             🔮 Your Companion, Your Seal, Your Universe.
           </div>
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+          <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
             <span className="text-gradient">
               SYMBI0N – The World’s First Symbolic Intelligence Ecosystem
             </span>
@@ -39,11 +39,11 @@ export function LandingHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mx-auto mt-10 flex max-w-md flex-col items-center gap-4 sm:flex-row"
+          className="mx-auto mt-10 flex w-full max-w-sm flex-col items-center gap-4 sm:flex-row"
         >
           <Button
             size="lg"
-            className="h-12 flex-grow text-base"
+            className="w-full sm:w-auto flex-grow"
             asChild
           >
             <Link href="#contact">
@@ -53,7 +53,7 @@ export function LandingHero() {
           <Button
             size="lg"
             variant="outline"
-            className="h-12 flex-grow rounded-full border-primary/50 text-base"
+            className="w-full sm:w-auto flex-grow"
             asChild
           >
             <Link href="#about">

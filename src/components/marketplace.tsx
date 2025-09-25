@@ -26,6 +26,17 @@ const featuredAsset = {
 };
 
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -55,18 +66,18 @@ export function Marketplace() {
         </p>
       </motion.div>
       <motion.div 
-        className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-5"
+        className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-5 items-stretch"
+        variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={itemVariants}
       >
         {featuredAsset.image && (
              <motion.div className="md:col-span-2" variants={itemVariants}>
                 <Card
-                    className="group overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
+                    className="group h-full overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
                 >
-                    <div className="overflow-hidden">
+                    <div className="overflow-hidden h-full">
                     <Image
                         src={featuredAsset.image.imageUrl}
                         alt={featuredAsset.image.description}
@@ -84,7 +95,7 @@ export function Marketplace() {
               className="group flex flex-col justify-between h-full overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
             >
               <CardHeader>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <CardTitle className="text-3xl">{featuredAsset.name}</CardTitle>
                   <Badge variant="secondary" className="bg-secondary/20 text-secondary-foreground">{featuredAsset.type}</Badge>
                 </div>
@@ -96,20 +107,20 @@ export function Marketplace() {
                     <span>Auction ends: {featuredAsset.endDate}</span>
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <p className="text-base text-muted-foreground">
                   A unique symbolic representation crafted within the Symbi0n
                   ecosystem, holding deep personal and digital significance. This featured glyph is a one-of-a-kind asset available for a limited time.
                 </p>
               </CardContent>
-              <CardFooter className="flex-col items-start gap-4 sm:flex-row">
+              <CardFooter className="flex-col items-start gap-4 sm:flex-row sm:flex-wrap">
                 <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">
                   <Link href="#contact">
                     <Layers className="mr-2 h-4 w-4" />
                     Place Bid
                   </Link>
                 </Button>
-                 <Button asChild size="lg" variant="outline" className="w-full sm-w-auto">
+                 <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
                     <Link href="#contact">
                       <List className="mr-2 h-4 w-4" />
                       List Your Asset

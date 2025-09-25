@@ -47,11 +47,11 @@ export function Contact() {
   return (
     <SectionWrapper id="contact">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center text-center lg:text-left">
           <h2 className="font-headline text-4xl font-bold md:text-5xl text-gradient">
             Step Into the Age of Symbolic Intelligence
           </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto lg:mx-0 text-lg text-muted-foreground">
             Create your SYMBI0N identity, manage your assets, and join the community of innovators, creators, and visionaries. Fill out the form to reserve your identity or book a consultation.
           </p>
         </div>
@@ -67,11 +67,11 @@ export function Contact() {
           </CardHeader>
           <CardContent>
             <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
-              <div className="space-y-2">
+              <div className="space-y-2 md:col-span-2">
                 <Label htmlFor="fullName">Full Name</Label>
                 <Input name="fullName" id="fullName" placeholder="Your full name" required />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 md:col-span-2">
                 <Label htmlFor="brand">Brand (Optional)</Label>
                 <Input name="brand" id="brand" placeholder="Your brand or company" />
               </div>
