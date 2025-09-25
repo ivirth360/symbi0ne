@@ -7,7 +7,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { Menu } from 'lucide-react';
+import { Menu, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 const navLinks = [
@@ -16,7 +16,6 @@ const navLinks = [
   { href: '#modules', label: 'Modules' },
   { href: '#membership', label: 'Memberships' },
   { href: '#marketplace', label: 'Auction' },
-  { href: '#contact', label: 'Contact'}
 ];
 
 export function Header() {
@@ -40,8 +39,11 @@ export function Header() {
           </ul>
         </nav>
         <div className="ml-auto flex items-center space-x-4">
-          <Button variant="ghost" className="hidden sm:inline-flex">Log In</Button>
-          <Button className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex">Sign Up</Button>
+          <Button asChild className="hidden bg-accent text-accent-foreground hover:bg-accent/90 sm:inline-flex">
+            <Link href="#contact">
+              Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
@@ -68,8 +70,11 @@ export function Header() {
                   </ul>
                 </nav>
                 <div className="mt-8 flex flex-col space-y-4">
-                  <Button variant="ghost">Log In</Button>
-                  <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Sign Up</Button>
+                   <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Link href="#contact" onClick={() => setIsOpen(false)}>
+                      Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </SheetContent>

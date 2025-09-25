@@ -1,3 +1,4 @@
+'use client';
 import {
   Card,
   CardContent,
@@ -7,8 +8,9 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { SectionWrapper } from './section-wrapper';
+import Link from 'next/link';
 
 const tiers = [
   {
@@ -16,7 +18,7 @@ const tiers = [
     price: '₹5,000',
     period: '/ year',
     features: ['UID', 'HELIX', 'SYMBI Companion'],
-    cta: 'Subscribe Now',
+    cta: 'Get Started',
     isPopular: false,
   },
   {
@@ -24,7 +26,7 @@ const tiers = [
     price: '₹15,000',
     period: '/ year',
     features: ['UID', 'Asset Management', 'Auction Access'],
-    cta: 'Subscribe Now',
+    cta: 'Go Pro',
     isPopular: true,
   },
   {
@@ -32,7 +34,7 @@ const tiers = [
     price: '₹50,000',
     period: '/ year',
     features: ['Identity', 'SYMBI Integration'],
-    cta: 'Subscribe Now',
+    cta: 'For Brands',
     isPopular: false,
   },
   {
@@ -40,12 +42,12 @@ const tiers = [
     price: '₹2,50,000',
     period: '/ year',
     features: ['Full Identity', 'AI', 'Assets', 'Auction'],
-    cta: 'Subscribe Now',
+    cta: 'Brand Pro',
     isPopular: false,
   },
   {
     name: 'Enterprise',
-    price: '₹10,00,000+',
+    price: 'Contact Us',
     period: '',
     features: ['Custom AI', 'Modeling', 'Research'],
     cta: 'Book Consultation',
@@ -65,11 +67,11 @@ export function Membership() {
           ecosystem. Unlock more features as you grow.
         </p>
       </div>
-      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {tiers.map((tier) => (
           <Card
             key={tier.name}
-            className={`flex flex-col border-primary/20 bg-card/50 ${
+            className={`flex flex-col border-primary/20 bg-card/50 transition-all hover:shadow-lg hover:shadow-primary/10 ${
               tier.isPopular ? 'border-2 border-accent shadow-2xl shadow-accent/10' : 'border-border'
             }`}
           >
@@ -99,12 +101,15 @@ export function Membership() {
             </CardContent>
             <CardFooter>
               <Button
+                asChild
                 className={`w-full ${
                   tier.isPopular || tier.cta === 'Book Consultation' ? 'bg-accent text-accent-foreground hover:bg-accent/90' : ''
                 }`}
                 variant={tier.isPopular ? 'default' : 'outline'}
               >
-                {tier.cta}
+                <Link href="#contact">
+                  {tier.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </CardFooter>
           </Card>
