@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useTransition, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -16,10 +17,14 @@ import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 interface Message {
   role: 'user' | 'bot';
   content: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  imageHint?: string;
 }
 
 export function SymbiFAB() {
@@ -27,7 +32,7 @@ export function SymbiFAB() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'bot',
-      content: 'Welcome to the Symbi0n Ecosystem. Ask me about your symbolic identity or assets.',
+      content: 'Welcome to the Symbi0n Ecosystem. Ask me for a symbolic analysis, or enter your name to generate your HELIX glyph.',
     },
   ]);
   const [input, setInput] = useState('');
@@ -49,12 +54,19 @@ export function SymbiFAB() {
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
+    const currentInput = input;
     setInput('');
 
     startTransition(async () => {
-      const result = await symbi({ query: input });
+      const result = await symbi({ query: currentInput });
       if (result.response) {
-        const botMessage: Message = { role: 'bot', content: result.response };
+        const botMessage: Message = { 
+          role: 'bot', 
+          content: result.response,
+          imageUrl: result.imageUrl,
+          imageAlt: result.imageAlt,
+          imageHint: result.imageHint,
+        };
         setMessages((prev) => [...prev, botMessage]);
       } else {
         toast({
@@ -115,7 +127,24 @@ export function SymbiFAB() {
                           : 'bg-muted text-muted-foreground'
                       )}
                     >
-                      {message.content}
+                      <p>{message.content}</p>
+                      {message.imageUrl && (
+                         <motion.div
+                            key="generated"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-center mt-4"
+                        >
+                            <Image
+                            src={message.imageUrl}
+                            alt={message.imageAlt || 'Generated Glyph'}
+                            data-ai-hint={message.imageHint || ''}
+                            width={300}
+                            height={300}
+                            className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/20 animate-in fade-in zoom-in-75 duration-700"
+                            />
+                        </motion.div>
+                      )}
                     </div>
                     {message.role === 'user' && (
                       <Avatar className="h-8 w-8">

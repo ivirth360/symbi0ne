@@ -1,5 +1,4 @@
 import { LandingHero } from '@/components/landing-hero';
-import { HelixDemo } from '@/components/helix-demo';
 import { Membership } from '@/components/membership';
 import { Marketplace } from '@/components/marketplace';
 import { About } from '@/components/about';
@@ -15,7 +14,6 @@ export default function Home() {
         <About />
         <Services />
         <Modules />
-        <HelixDemo />
         <Marketplace />
         <Membership />
         <Contact />

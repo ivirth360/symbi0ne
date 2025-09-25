@@ -19,7 +19,7 @@ import { motion } from 'framer-motion';
 const featuredAsset = {
   id: '1',
   name: 'Glyph of Ascendance',
-  price: '1.5 ETH',
+  price: '₹1,25,000',
   type: 'Ekam Lipi',
   endDate: 'This week',
   image: PlaceHolderImages.find((img) => img.id === 'glyph-1'),
@@ -109,7 +109,7 @@ export function Marketplace() {
                     Place Bid
                   </Link>
                 </Button>
-                 <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+                 <Button asChild size="lg" variant="outline" className="w-full sm-w-auto">
                     <Link href="#contact">
                       <List className="mr-2 h-4 w-4" />
                       List Your Asset
