@@ -30,11 +30,11 @@ export default function RootLayout({
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="vriksha"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <div className={cn('min-h-screen bg-background font-body antialiased')}>
+          <div className={cn('min-h-screen bg-background font-body antialiased theme-vriksha')}>
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

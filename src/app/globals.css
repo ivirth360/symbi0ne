@@ -4,10 +4,8 @@
 
 @layer base {
   :root,
-  html.vriksha,
-  html.dark,
-  body.theme-vriksha,
-  .theme-vriksha {
+  html,
+  body {
     --background: 260 52% 11%; /* Deep Cosmic Purple */
     --foreground: 0 0% 96%; /* Soft White */
     --card: 259 42% 18%;
@@ -33,10 +31,32 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
+  html.dark,
+  body.dark {
+    --background: 260 52% 11%;
+    --foreground: 0 0% 96%;
+    --card: 259 42% 18%;
+    --card-foreground: 0 0% 96%;
+    --popover: 260 52% 11%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 43 100% 70%;
+    --primary-foreground: 260 52% 11%;
+    --secondary: 187 70% 62%;
+    --secondary-foreground: 260 52% 11%;
+    --muted: 259 42% 28%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 14 100% 62%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 259 42% 28%;
+    --input: 259 42% 28%;
+    --ring: 43 100% 70%;
+  }
  
   html.light,
-  body.theme-light,
-  .theme-light {
+  body.light {
     --background: 0 0% 98%;
     --foreground: 260 52% 11%;
     --card: 0 0% 100%;
@@ -58,16 +78,12 @@
     --ring: 43 90% 55%;
   }
 
-  html.jal.dark,
-  body.theme-jal.dark,
   .theme-jal.dark {
     --background: 210 50% 10%;
     --primary: 190 80% 65%;
     --secondary: 220 70% 75%;
     --accent: 180 100% 50%;
   }
-  html.jal.light,
-  body.theme-jal.light,
   .theme-jal.light {
     --background: 210 50% 95%;
     --primary: 190 60% 45%;
@@ -75,16 +91,12 @@
     --accent: 180 80% 40%;
   }
 
-  html.agni.dark,
-  body.theme-agni.dark,
   .theme-agni.dark {
     --background: 20 60% 8%;
     --primary: 30 100% 60%;
     --secondary: 10 90% 55%;
     --accent: 45 100% 50%;
   }
-  html.agni.light,
-  body.theme-agni.light,
   .theme-agni.light {
     --background: 20 60% 96%;
     --primary: 30 80% 50%;
@@ -92,16 +104,12 @@
     --accent: 45 90% 45%;
   }
 
-  html.vayu.dark,
-  body.theme-vayu.dark,
   .theme-vayu.dark {
     --background: 190 20% 15%;
     --primary: 210 50% 70%;
     --secondary: 180 30% 80%;
     --accent: 200 100% 70%;
   }
-  html.vayu.light,
-  body.theme-vayu.light,
   .theme-vayu.light {
     --background: 190 20% 95%;
     --primary: 210 40% 50%;
@@ -109,8 +117,12 @@
     --accent: 200 80% 55%;
   }
   
-  html.vriksha.light,
-  body.theme-vriksha.light,
+  .theme-vriksha.dark {
+    --background: 260 52% 11%;
+    --primary: 43 100% 70%;
+    --secondary: 187 70% 62%;
+    --accent: 14 100% 62%;
+  }
   .theme-vriksha.light {
      --background: 0 0% 98%;
     --foreground: 260 52% 11%;
@@ -133,16 +145,12 @@
     --ring: 43 90% 55%;
   }
 
-  html.sh00nya.dark,
-  body.theme-sh00nya.dark,
   .theme-sh00nya.dark {
     --background: 0 0% 5%;
     --primary: 0 0% 80%;
     --secondary: 0 0% 50%;
     --accent: 0 0% 100%;
   }
-  html.sh00nya.light,
-  body.theme-sh00nya.light,
   .theme-sh00nya.light {
     --background: 0 0% 100%;
     --primary: 0 0% 20%;
