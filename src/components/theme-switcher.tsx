@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useTheme } from 'next-themes';
+import { useTheme as useNextTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -14,28 +14,11 @@ import {
   DropdownMenuSubContent,
 } from '@/components/ui/dropdown-menu';
 import { Moon, Sun, Palette, Droplet, Flame, Wind, Mountain, CircleDot } from 'lucide-react';
+import { themes as themeConfig } from './theme-provider';
 
-const themes = [
-    { name: 'jal', icon: <Droplet className="h-4 w-4" /> },
-    { name: 'agni', icon: <Flame className="h-4 w-4" /> },
-    { name: 'vayu', icon: <Wind className="h-4 w-4" /> },
-    { name: 'vriksha', icon: <Mountain className="h-4 w-4" /> },
-    { name: 'sh00nya', icon: <CircleDot className="h-4 w-4" /> },
-]
 
 export function ThemeSwitcher() {
-  const { setTheme, theme } = useTheme();
-
-  const handleThemeChange = (newTheme: string) => {
-    const currentMode = theme?.includes('dark') || theme?.includes('light') ? (theme.includes('dark') ? 'dark' : 'light') : 'dark';
-    const baseTheme = themes.find(t => theme?.includes(t.name))?.name;
-
-    if (newTheme === 'light' || newTheme === 'dark') {
-      setTheme(baseTheme ? `theme-${baseTheme} ${newTheme}` : newTheme);
-    } else {
-        setTheme(`theme-${newTheme} ${currentMode}`);
-    }
-  };
+  const { setTheme } = useNextTheme();
 
   return (
     <DropdownMenu>
@@ -51,20 +34,34 @@ export function ThemeSwitcher() {
                 <span>Themes</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
-                 {themes.map(({name, icon}) => (
-                    <DropdownMenuItem key={name} onClick={() => handleThemeChange(name)}>
-                        {icon}
-                        <span className="capitalize ml-2">{name}</span>
-                    </DropdownMenuItem>
-                ))}
+                 <DropdownMenuItem onClick={() => setTheme('vriksha')}>
+                    <Mountain className="mr-2 h-4 w-4" />
+                    <span className="capitalize ml-2">Vriksha</span>
+                </DropdownMenuItem>
+                 <DropdownMenuItem onClick={() => setTheme('jal')}>
+                    <Droplet className="mr-2 h-4 w-4" />
+                    <span className="capitalize ml-2">Jal</span>
+                </DropdownMenuItem>
+                 <DropdownMenuItem onClick={() => setTheme('agni')}>
+                    <Flame className="mr-2 h-4 w-4" />
+                    <span className="capitalize ml-2">Agni</span>
+                </DropdownMenuItem>
+                 <DropdownMenuItem onClick={() => setTheme('vayu')}>
+                    <Wind className="mr-2 h-4 w-4" />
+                    <span className="capitalize ml-2">Vayu</span>
+                </DropdownMenuItem>
+                 <DropdownMenuItem onClick={() => setTheme('sh00nya')}>
+                    <CircleDot className="mr-2 h-4 w-4" />
+                    <span className="capitalize ml-2">Sh00nya</span>
+                </DropdownMenuItem>
             </DropdownMenuSubContent>
         </DropdownMenuSub>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => handleThemeChange('light')}>
+        <DropdownMenuItem onClick={() => setTheme('light')}>
           <Sun className="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleThemeChange('dark')}>
+        <DropdownMenuItem onClick={() => setTheme('dark')}>
           <Moon className="mr-2 h-4 w-4" />
           <span>Dark</span>
         </DropdownMenuItem>
