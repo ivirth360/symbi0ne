@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        body: ['var(--font-roboto)', ...fontFamily.sans],
         headline: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
@@ -97,9 +97,9 @@ export default {
         },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'subtle-pulse': 'subtle-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'accordion-down': 'accordion-down 0.3s ease-out',
+        'accordion-up': 'accordion-up 0.3s ease-out',
+        'subtle-pulse': 'subtle-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },
