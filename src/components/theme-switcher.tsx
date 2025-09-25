@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useTheme as useNextTheme } from 'next-themes';
+import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -14,11 +14,9 @@ import {
   DropdownMenuSubContent,
 } from '@/components/ui/dropdown-menu';
 import { Moon, Sun, Palette, Droplet, Flame, Wind, Mountain, CircleDot } from 'lucide-react';
-import { themes as themeConfig } from './theme-provider';
-
 
 export function ThemeSwitcher() {
-  const { setTheme } = useNextTheme();
+  const { setTheme } = useTheme();
 
   return (
     <DropdownMenu>
