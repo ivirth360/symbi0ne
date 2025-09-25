@@ -3,8 +3,6 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SymbiFAB } from '@/components/symbi-fab';
-import { ThemeProvider, ElementalThemeProvider } from '@/components/theme-provider';
-import { ThemeSwitcher } from '@/components/theme-switcher';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -18,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -28,23 +26,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ElementalThemeProvider>
-            <div className="min-h-screen bg-background font-body antialiased">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <Toaster />
-              <ThemeSwitcher />
-              <SymbiFAB />
-            </div>
-          </ElementalThemeProvider>
-        </ThemeProvider>
+        <div className="min-h-screen bg-background font-body antialiased">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <Toaster />
+          <SymbiFAB />
+        </div>
       </body>
     </html>
   );
