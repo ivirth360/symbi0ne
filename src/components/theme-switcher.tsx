@@ -20,7 +20,7 @@ export function ThemeSwitcher() {
   const { setTheme, setElementalTheme } = useTheme();
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-20 left-6 z-50">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
            <motion.div whileHover={{ scale: 1.1, rotate: 15 }} whileTap={{ scale: 0.9 }}>

@@ -9,7 +9,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 }
 
 // --- Elemental Theme Provider ---
-const elementalThemes = ['theme-vriksha', 'theme-jal', 'theme-agni', 'theme-vayu', 'theme-sh00nya'];
+const elementalThemes = ['theme-vriksha', 'theme-jal', 'theme-agni', 'theme-vayu', 'theme-sh00nya', 'default'];
 
 type ElementalThemeContextType = {
   elementalTheme: string;
@@ -23,7 +23,9 @@ export function ElementalThemeProvider({ children }: { children: React.ReactNode
 
   React.useEffect(() => {
     const bodyClassList = document.body.classList;
-    bodyClassList.remove(...elementalThemes);
+    // Remove all possible elemental themes
+    bodyClassList.remove(...elementalThemes.filter(t => t !== 'default'));
+    // Add the current one if it's not the default
     if (elementalTheme && elementalTheme !== 'default') {
       bodyClassList.add(elementalTheme);
     }
@@ -50,6 +52,7 @@ export const useTheme = () => {
 
   return {
     ...nextThemeContext,
-    ...elementalThemeContext,
+    elementalTheme: elementalThemeContext.elementalTheme,
+    setElementalTheme: elementalThemeContext.setElementalTheme,
   };
 };
