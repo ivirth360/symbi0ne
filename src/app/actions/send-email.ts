@@ -17,7 +17,7 @@ export async function sendContactEmail(formData: FormData) {
 
   const mailOptions = {
     from: `"Symbi0n" <${process.env.SMTP_USER}>`,
-    to: process.env.SMTP_USER,
+    to: 'symbi0n@ivirth.com',
     subject: 'New Identity Reservation',
     html: `
         <h1>New Identity Reservation</h1>
