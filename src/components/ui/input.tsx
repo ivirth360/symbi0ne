@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
@@ -21,6 +20,4 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
 );
 Input.displayName = 'Input';
 
-const MotionInput = motion(Input);
-
-export { Input, MotionInput };
+export { Input };
