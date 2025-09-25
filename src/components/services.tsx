@@ -1,7 +1,7 @@
 
 import { SectionWrapper } from './section-wrapper';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
-import { User, Building, Store, Search, BarChart } from 'lucide-react';
+import { User, Building, Store, Search, BarChart, PenTool } from 'lucide-react';
 import { Button } from './ui/button';
 
 const individualServices = [
@@ -13,6 +13,7 @@ const individualServices = [
 
 const brandServices = [
     { icon: <Building/>, title: 'Brand Identity & Symbolic Branding' },
+    { icon: <PenTool />, title: 'Symbolic Design Modelling' },
     { icon: <Store />, title: 'Brand Asset Management & Monetization' },
     { icon: <User />, title: 'Symbolic Audience & Market Insights' },
     { icon: <Search />, title: 'SYMBI AI as a Service (Personalized Insights)' },
