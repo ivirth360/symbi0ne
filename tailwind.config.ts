@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-roboto)', ...fontFamily.sans],
+        body: ['var(--font-work-sans)', ...fontFamily.sans],
         headline: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
