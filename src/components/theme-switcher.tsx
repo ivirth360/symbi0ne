@@ -21,14 +21,17 @@ export function ThemeSwitcher() {
   const { setTheme } = useTheme();
 
   const handleElementalThemeChange = (newTheme: string) => {
+    // Remove any existing elemental theme classes from the body
     document.body.classList.remove(...elementalThemes);
+    
+    // Add the new elemental theme class if one is selected
     if (newTheme) {
       document.body.classList.add(newTheme);
     }
   };
 
   React.useEffect(() => {
-    // Set a default elemental theme
+    // Set a default elemental theme on initial load
     handleElementalThemeChange('theme-vriksha');
   }, []);
 
