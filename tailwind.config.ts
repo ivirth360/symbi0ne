@@ -20,7 +20,6 @@ export default {
       fontFamily: {
         body: ['"Space Grotesk"', ...fontFamily.sans],
         headline: ['"Space Grotesk"', ...fontFamily.sans],
-        code: ['monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',

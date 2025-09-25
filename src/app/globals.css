@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 260 52% 11%;
-    --foreground: 0 0% 96%;
+    --background: 260 52% 11%; /* Deep Cosmic Purple */
+    --foreground: 0 0% 96%; /* Soft White */
     --card: 259 42% 18%;
     --card-foreground: 0 0% 96%;
     --popover: 260 52% 11%;
@@ -15,7 +15,7 @@
     --secondary: 187 70% 62%; /* Electric Cyan */
     --secondary-foreground: 260 52% 11%;
     --muted: 259 42% 28%;
-    --muted-foreground: 0 0% 80%;
+    --muted-foreground: 0 0% 80%; /* Light Gray */
     --accent: 14 100% 62%; /* Warm Diwali Orange */
     --accent-foreground: 0 0% 96%;
     --destructive: 0 63% 31%;
@@ -31,8 +31,8 @@
   }
  
   .dark {
-    --background: 260 52% 11%;
-    --foreground: 0 0% 96%;
+    --background: 260 52% 11%; /* Deep Cosmic Purple */
+    --foreground: 0 0% 96%; /* Soft White */
     --card: 259 42% 18%;
     --card-foreground: 0 0% 96%;
     --popover: 260 52% 11%;
@@ -42,7 +42,7 @@
     --secondary: 187 70% 62%; /* Electric Cyan */
     --secondary-foreground: 260 52% 11%;
     --muted: 259 42% 28%;
-    --muted-foreground: 0 0% 80%;
+    --muted-foreground: 0 0% 80%; /* Light Gray */
     --accent: 14 100% 62%; /* Warm Diwali Orange */
     --accent-foreground: 0 0% 96%;
     --destructive: 0 63% 31%;
