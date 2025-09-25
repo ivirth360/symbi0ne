@@ -3,7 +3,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SymbiFAB } from '@/components/symbi-fab';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider, ElementalThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -33,13 +33,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen bg-background font-body antialiased">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-            <Toaster />
-            <SymbiFAB />
-          </div>
+          <ElementalThemeProvider>
+            <div className="min-h-screen bg-background font-body antialiased">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <Toaster />
+              <SymbiFAB />
+            </div>
+          </ElementalThemeProvider>
         </ThemeProvider>
       </body>
     </html>
