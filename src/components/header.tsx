@@ -8,7 +8,6 @@ const navLinks = [
   { href: '#modules', label: 'Modules' },
   { href: '#membership', label: 'Memberships' },
   { href: '#marketplace', label: 'Marketplace' },
-  { href: '#roadmap', label: 'Roadmap' },
 ];
 
 export function Header() {
