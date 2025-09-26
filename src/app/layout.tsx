@@ -39,9 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-body antialiased", archivo.variable)}>
-        <div className="relative flex min-h-dvh flex-col bg-background">
+        <div className="relative flex min-h-dvh flex-col items-center bg-background">
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 w-full">{children}</main>
           <Footer />
           <Toaster />
           <SymbiFAB />
