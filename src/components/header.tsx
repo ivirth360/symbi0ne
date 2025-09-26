@@ -40,7 +40,7 @@ export function Header() {
         </nav>
         <div className="ml-auto flex items-center space-x-2">
           <Button asChild className="hidden sm:inline-flex">
-            <Link href="#contact">
+            <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
               Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -71,7 +71,7 @@ export function Header() {
                 </nav>
                 <div className="mt-8 flex flex-col space-y-4">
                    <Button asChild>
-                    <Link href="#contact" onClick={() => setIsOpen(false)}>
+                    <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                       Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>

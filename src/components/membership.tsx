@@ -169,7 +169,7 @@ export function Membership() {
                   )}
                   variant={tier.isPopular ? 'default' : 'outline'}
                 >
-                  <Link href="#contact">
+                  <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
                     {tier.cta} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

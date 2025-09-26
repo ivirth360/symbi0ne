@@ -46,7 +46,7 @@ export function LandingHero() {
             className="w-full sm:w-auto flex-grow"
             asChild
           >
-            <Link href="#contact">
+            <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
               Reserve Your Identity <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

@@ -114,13 +114,13 @@ export function Marketplace() {
               </CardContent>
               <CardFooter className="flex-col items-start gap-4 sm:flex-row sm:flex-wrap">
                 <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90">
-                  <Link href="#contact">
+                  <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
                     <Layers className="mr-2 h-4 w-4" />
                     Place Bid
                   </Link>
                 </Button>
                  <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
-                    <Link href="#contact">
+                    <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
                       <List className="mr-2 h-4 w-4" />
                       List Your Asset
                     </Link>
