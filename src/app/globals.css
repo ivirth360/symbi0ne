@@ -39,4 +39,15 @@
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
+  .ai-bg-gradient-animation {
+    @apply absolute inset-0 z-0 h-full w-full;
+    background: radial-gradient(circle at 100% 100%, hsl(var(--primary-hsl) / 0.15), transparent 40%),
+                radial-gradient(circle at 0% 0%, hsl(var(--secondary-hsl) / 0.15), transparent 40%);
+    background-size: 200% 200%;
+    animation: ai-gradient-move 15s ease-in-out infinite;
+  }
+  @keyframes ai-gradient-move {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 }
