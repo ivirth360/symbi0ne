@@ -105,124 +105,126 @@ export function SymbiFAB() {
       </motion.div>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-2xl overflow-hidden p-0">
-          <div className="ai-bg-gradient-animation z-0" />
-          <div className="relative z-10 flex h-full max-h-[80vh] flex-col bg-background">
-            <DialogHeader className="p-6 pb-2">
-              <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-gradient">
-                <Bot className="h-8 w-8" />
-                <span>Chat with SYMBI</span>
-              </DialogTitle>
-              <DialogDescription className="text-muted-foreground/80">
-                Your personal AI guide to the symbolic universe.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="flex flex-1 flex-col space-y-4 overflow-hidden p-6 pt-2">
-              <ScrollArea
-                className="flex-grow pr-4"
-                ref={scrollAreaRef}
-              >
-                <AnimatePresence initial={false}>
-                  <motion.div className="space-y-4">
-                    {messages.map((message, index) => (
-                      <motion.div
-                        key={index}
-                        layout
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.3 }}
-                        className={cn(
-                          'flex items-start gap-3',
-                          message.role === 'user'
-                            ? 'justify-end'
-                            : 'justify-start'
-                        )}
-                      >
-                        {message.role === 'bot' && (
+          <div className="relative flex h-full max-h-[80vh] flex-col bg-background">
+            <div className="ai-bg-gradient-animation z-0" />
+            <div className="relative z-10 flex h-full flex-col">
+              <DialogHeader className="p-6 pb-2">
+                <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-gradient">
+                  <Bot className="h-8 w-8" />
+                  <span>Chat with SYMBI</span>
+                </DialogTitle>
+                <DialogDescription className="text-muted-foreground/80">
+                  Your personal AI guide to the symbolic universe.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex flex-1 flex-col space-y-4 overflow-hidden p-6 pt-2">
+                <ScrollArea
+                  className="flex-grow pr-4"
+                  ref={scrollAreaRef}
+                >
+                  <AnimatePresence initial={false}>
+                    <motion.div className="space-y-4">
+                      {messages.map((message, index) => (
+                        <motion.div
+                          key={index}
+                          layout
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.3 }}
+                          className={cn(
+                            'flex items-start gap-3',
+                            message.role === 'user'
+                              ? 'justify-end'
+                              : 'justify-start'
+                          )}
+                        >
+                          {message.role === 'bot' && (
+                            <Avatar className="h-8 w-8 border border-primary/20">
+                              <AvatarFallback className="bg-primary/10 text-primary">
+                                <Bot className="h-5 w-5" />
+                              </AvatarFallback>
+                            </Avatar>
+                          )}
+                          <div
+                            className={cn(
+                              'max-w-[80%] rounded-lg px-4 py-2 text-sm shadow-md',
+                              message.role === 'user'
+                                ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground'
+                                : 'border border-border/20 bg-muted text-muted-foreground'
+                            )}
+                          >
+                            <p className="whitespace-pre-wrap">{message.content}</p>
+                            {message.imageUrl && (
+                              <motion.div
+                                key="generated"
+                                layout
+                                initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                className="text-center mt-4"
+                              >
+                                <Image
+                                  src={message.imageUrl}
+                                  alt={message.imageAlt || 'Generated Glyph'}
+                                  data-ai-hint={message.imageHint || ''}
+                                  width={300}
+                                  height={300}
+                                  className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/20 animate-in fade-in zoom-in-75 duration-700"
+                                />
+                              </motion.div>
+                            )}
+                          </div>
+                          {message.role === 'user' && (
+                            <Avatar className="h-8 w-8 border border-border/20">
+                              <AvatarFallback>
+                                <User className="h-5 w-5" />
+                              </AvatarFallback>
+                            </Avatar>
+                          )}
+                        </motion.div>
+                      ))}
+                      {isPending && (
+                        <motion.div
+                          layout
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex items-start gap-3"
+                        >
                           <Avatar className="h-8 w-8 border border-primary/20">
                             <AvatarFallback className="bg-primary/10 text-primary">
                               <Bot className="h-5 w-5" />
                             </AvatarFallback>
                           </Avatar>
-                        )}
-                        <div
-                          className={cn(
-                            'max-w-[80%] rounded-lg px-4 py-2 text-sm shadow-md',
-                            message.role === 'user'
-                              ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground'
-                              : 'border border-border/20 bg-muted text-muted-foreground'
-                          )}
-                        >
-                          <p className="whitespace-pre-wrap">{message.content}</p>
-                          {message.imageUrl && (
-                            <motion.div
-                              key="generated"
-                              layout
-                              initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                              animate={{ opacity: 1, y: 0, scale: 1 }}
-                              className="text-center mt-4"
-                            >
-                              <Image
-                                src={message.imageUrl}
-                                alt={message.imageAlt || 'Generated Glyph'}
-                                data-ai-hint={message.imageHint || ''}
-                                width={300}
-                                height={300}
-                                className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/20 animate-in fade-in zoom-in-75 duration-700"
-                              />
-                            </motion.div>
-                          )}
-                        </div>
-                        {message.role === 'user' && (
-                          <Avatar className="h-8 w-8 border border-border/20">
-                            <AvatarFallback>
-                              <User className="h-5 w-5" />
-                            </AvatarFallback>
-                          </Avatar>
-                        )}
-                      </motion.div>
-                    ))}
-                    {isPending && (
-                      <motion.div
-                        layout
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="flex items-start gap-3"
-                      >
-                        <Avatar className="h-8 w-8 border border-primary/20">
-                          <AvatarFallback className="bg-primary/10 text-primary">
-                            <Bot className="h-5 w-5" />
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="flex items-center space-x-2 rounded-lg border border-border/20 bg-muted px-4 py-2 text-sm text-muted-foreground shadow-md">
-                          <Loader2 className="h-4 w-4 animate-spin" />
-                          <span>Thinking...</span>
-                        </div>
-                      </motion.div>
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </ScrollArea>
-              <div className="flex w-full items-center space-x-2">
-                <Input
-                  type="text"
-                  placeholder="Ask your companion..."
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                  disabled={isPending}
-                  className="h-11 flex-1 rounded-full border-border/30 bg-background/80 focus-visible:ring-offset-0"
-                />
-                <Button
-                  type="submit"
-                  size="icon"
-                  onClick={handleSend}
-                  disabled={isPending || !input.trim()}
-                  className="h-11 w-11 flex-shrink-0"
-                >
-                  <Send className="h-5 w-5" />
-                </Button>
+                          <div className="flex items-center space-x-2 rounded-lg border border-border/20 bg-muted px-4 py-2 text-sm text-muted-foreground shadow-md">
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                            <span>Thinking...</span>
+                          </div>
+                        </motion.div>
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                </ScrollArea>
+                <div className="flex w-full items-center space-x-2">
+                  <Input
+                    type="text"
+                    placeholder="Ask your companion..."
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                    disabled={isPending}
+                    className="h-11 flex-1 rounded-full border-border/30 bg-background/80 focus-visible:ring-offset-0"
+                  />
+                  <Button
+                    type="submit"
+                    size="icon"
+                    onClick={handleSend}
+                    disabled={isPending || !input.trim()}
+                    className="h-11 w-11 flex-shrink-0"
+                  >
+                    <Send className="h-5 w-5" />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
