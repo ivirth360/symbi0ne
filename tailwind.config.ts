@@ -23,7 +23,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-work-sans)', ...fontFamily.sans],
+        body: ['var(--font-roboto-mono)', ...fontFamily.mono],
         headline: ['var(--font-ibm-plex-mono)', ...fontFamily.mono],
       },
       colors: {
