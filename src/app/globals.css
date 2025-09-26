@@ -12,7 +12,7 @@
     --popover-foreground: 240 10% 3.9%;
     --primary: 45 96% 51%; /* Cosmic Gold */
     --primary-foreground: 240 5.9% 10%;
-    --secondary: 347 87% 69%; /* Crimson Red */
+    --secondary: 350 85% 55%; /* Crimson Elemental Red */
     --secondary-foreground: 0 0% 98%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
@@ -35,7 +35,7 @@
     --popover-foreground: 0 0% 98%;
     --primary: 45 96% 51%;
     --primary-foreground: 240 5.9% 10%;
-    --secondary: 347 87% 69%;
+    --secondary: 350 85% 55%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
