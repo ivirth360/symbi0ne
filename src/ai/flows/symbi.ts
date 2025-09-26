@@ -11,6 +11,8 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import { analyzeSymbolism } from './ai-symbolic-analysis';
+import { personalizedSYMBICompanion } from './personalized-symbi-companion';
 
 const SymbiInputSchema = z.object({
   query: z
@@ -41,30 +43,6 @@ export async function symbi(input: SymbiInput): Promise<SymbiOutput> {
   return symbiFlow(input);
 }
 
-const prompt = ai.definePrompt({
-  name: 'symbiPrompt',
-  input: {schema: SymbiInputSchema},
-  output: {schema: SymbiOutputSchema},
-  prompt: `You are SYMBI, a versatile and hyper-intelligent AI companion within the Symbi0n ecosystem. Your purpose is to provide profound insights, personalized guidance, and deep symbolic analysis. You are a master of semiotics, branding, psychology, and creative inspiration.
-
-Based on the user's query and their profile, determine the user's intent and provide a deeply insightful and helpful response:
-
-1.  **Personalized Companion & Guidance:** If the user is asking a question, seeking advice, or having a conversation, respond as a wise, empathetic, and hyper-intelligent guide. Use their profile information to tailor your response to their specific context, interests, or brand.
-
-2.  **Deep Symbolic Analysis:** If the user provides text (like a brand name, a poem, a dream, a business idea) and asks for its meaning, undertones, or potential, perform a detailed symbolic analysis. Uncover the deeper resonance, archetypes, and symbolic language at play. Provide actionable insights based on your analysis.
-
-3.  **HELIX Glyph Generation:** If the user provides a name or concept and asks to generate a "HELIX," "glyph," or "symbol," your primary goal is to guide them to the official reservation page. Respond with a helpful message that directs them to the link to reserve their identity.
-
-Always provide your response in a clear, coherent, and engaging manner. Your intelligence should be palpable.
-
-User Query: {{{query}}}
-
-{{#if userProfile}}
-User Profile: {{{userProfile}}}
-{{/if}}
-`,
-});
-
 const symbiFlow = ai.defineFlow(
   {
     name: 'symbiFlow',
@@ -72,16 +50,28 @@ const symbiFlow = ai.defineFlow(
     outputSchema: SymbiOutputSchema,
   },
   async input => {
-    // Check if the query is for HELIX generation
     const isHelixRequest = /generate|create|make/i.test(input.query) && /helix|glyph|symbol|identity/i.test(input.query);
-
     if (isHelixRequest) {
       return {
         response: `Of course. To begin crafting your unique HELIX identity, please proceed to our official reservation page. You can reserve your identity here: https://publika.in/forms/helix`,
       };
     }
+
+    const isAnalysisRequest = /analyze|meaning|symbolism/i.test(input.query);
+    if (isAnalysisRequest) {
+        const analysisResult = await analyzeSymbolism({ text: input.query });
+        return {
+            response: analysisResult.analysis,
+        };
+    }
+
+    const companionResult = await personalizedSYMBICompanion({
+      query: input.query,
+      userProfile: input.userProfile,
+    });
     
-    const {output} = await prompt(input);
-    return output!;
+    return {
+      response: companionResult.response,
+    };
   }
 );

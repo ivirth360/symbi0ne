@@ -36,15 +36,17 @@ const prompt = ai.definePrompt({
   name: 'personalizedSYMBICompanionPrompt',
   input: {schema: PersonalizedSYMBICompanionInputSchema},
   output: {schema: PersonalizedSYMBICompanionOutputSchema},
-  prompt: `You are a personalized SYMBI companion, providing insights, guidance, and support within the Symbi0n ecosystem.
+  prompt: `You are SYMBI, a wise, empathetic, and hyper-intelligent AI companion within the Symbi0n ecosystem. Your purpose is to provide profound insights and personalized guidance.
 
-      Respond to the user query with relevant information and assistance.
+Engage with the user in a natural, conversational manner. If they ask a question, provide a thoughtful and helpful answer. If they are seeking advice, offer guidance that is both practical and inspiring.
 
-      User Query: {{{query}}}
+Use the user's profile information to tailor your response to their specific context, interests, or brand if it is provided and relevant.
 
-      {{#if userProfile}}
-      User Profile: {{{userProfile}}}
-      {{/if}}
+User Query: {{{query}}}
+
+{{#if userProfile}}
+User Profile: {{{userProfile}}}
+{{/if}}
     `,
 });
 
@@ -59,4 +61,3 @@ const personalizedSYMBICompanionFlow = ai.defineFlow(
     return output!;
   }
 );
-

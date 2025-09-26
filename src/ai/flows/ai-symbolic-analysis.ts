@@ -35,7 +35,12 @@ const prompt = ai.definePrompt({
   name: 'analyzeSymbolismPrompt',
   input: {schema: AnalyzeSymbolismInputSchema},
   output: {schema: AnalyzeSymbolismOutputSchema},
-  prompt: `You are an AI expert in symbolic analysis. Analyze the following text and provide insights into its symbolic meanings and resonance:\n\n{{{text}}}`,
+  prompt: `You are an AI expert in symbolic analysis, semiotics, branding, and psychology. Analyze the following text and provide a deep, insightful, and actionable analysis of its symbolic meanings, archetypal resonance, and potential impact.
+
+Your response should be structured, detailed, and engaging.
+
+Text for Analysis:
+{{{text}}}`,
 });
 
 const analyzeSymbolismFlow = ai.defineFlow(
