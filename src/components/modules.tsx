@@ -1,3 +1,4 @@
+
 'use client';
 
 import { SectionWrapper } from './section-wrapper';
@@ -5,7 +6,6 @@ import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 
 const modules = [
-  { name: 'SYMBI', description: 'Your Companion Intelligence' },
   { name: 'HELIX', description: 'Strand of Identity (UID + Digital Twin + Elemental Alignment)' },
   { name: 'Ekam Lipo', description: 'The generator for your personal Sigil or brand Seal.' },
   { name: 'Ekam Lipi', description: 'Unified Language of Symbols' },
@@ -50,35 +50,47 @@ export function Modules() {
         >
           SYMBI
         </motion.div>
-        {modules.map((module, index) => {
-          const angle = (index / modules.length) * 2 * Math.PI;
-          const radius = 220; // in pixels
-          const x = Math.cos(angle) * radius;
-          const y = Math.sin(angle) * radius;
-
-          return (
-            <motion.div
-              key={module.name}
-              className="absolute flex flex-col items-center text-center"
-              initial={{ x: 0, y: 0, opacity: 0 }}
-              whileInView={{ x, y, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.4 + 0.15 * index }}
-            >
-              <div className="group relative">
-                <motion.div 
-                  className="flex h-24 w-24 items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all hover:bg-secondary/20 hover:scale-110"
-                  whileHover={{ scale: 1.1 }}
+        
+        <div className="absolute inset-0">
+          {modules.map((module, index) => {
+            const angleOffset = Math.PI / 2; // Start from top
+            return (
+              <motion.div
+                key={module.name}
+                className="absolute left-1/2 top-1/2"
+                style={{
+                  transformOrigin: '0 0',
+                }}
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 20 + index * 5,
+                  ease: 'linear',
+                  repeat: Infinity,
+                }}
+              >
+                <motion.div
+                  className="group absolute flex flex-col items-center text-center"
+                   style={{
+                    transform: `translateX(-50%) translateY(-50%) rotate(${(index / modules.length) * 360}deg) translateX(220px) rotate(-${(index / modules.length) * 360}deg)`,
+                    animationPlayState: 'running'
+                  }}
+                  whileHover={{ scale: 1.1, animationPlayState: 'paused' }}
                 >
-                  <h3 className="text-sm font-bold text-secondary">{module.name}</h3>
+                    <div 
+                      className="flex h-24 w-24 items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-secondary/20 group-hover:scale-110"
+                    >
+                      <h3 className="text-sm font-bold text-secondary">{module.name}</h3>
+                    </div>
+                    <div className="absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-2 text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                      {module.description}
+                    </div>
                 </motion.div>
-                <div className="absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-2 text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
-                  {module.description}
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
 
       <motion.div 
@@ -95,3 +107,4 @@ export function Modules() {
     </SectionWrapper>
   );
 }
+
