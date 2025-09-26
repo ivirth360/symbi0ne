@@ -6,15 +6,15 @@ import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 
 const innerModules = [
-  { name: 'HELIX', description: 'Strand of Identity: Your unique digital twin and verifiable identity.' },
-  { name: 'SOMA', description: 'The embodiment of your physical and digital presence, connecting real-world routines to your symbolic identity.' },
-  { name: 'EKAM', description: 'The principle of unity, ensuring every part of your identity is a coherent and integrated whole.' },
+  { name: 'HELIX', description: 'The Strand of Identity: Your unique, verifiable, and evolving digital twin.' },
+  { name: 'SOMA', description: 'The Body of Experience: The living embodiment of your physical and digital presence.' },
+  { name: 'EKAM', description: 'The Soul of Unity: The principle of oneness, ensuring a coherent and integrated identity.' },
 ];
 
 const outerModules = [
-  { name: 'ONE', description: 'The foundational layer of your unique identity, representing your singular, verifiable self in the digital world.' },
-  { name: '360', description: 'A comprehensive view of your digital ecosystem, providing holistic insights from every angle.' },
-  { name: '360ne', description: 'A unified, 360-degree perspective of your brand or personal essence, powering predictive insights.' },
+  { name: 'ONE', description: 'The Foundation: Your singular, verifiable self in the digital universe.' },
+  { name: '360', description: 'The Ecosystem View: Holistic, 360-degree insights into your symbolic world.' },
+  { name: '360ne', description: 'The Unified Vision: A singular, all-encompassing perspective powering predictive intelligence.' },
 ]
 
 export function Modules() {
