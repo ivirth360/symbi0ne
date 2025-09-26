@@ -96,7 +96,7 @@ export function SymbiFAB() {
         transition={{ delay: 1, duration: 0.5 }}
       >
         <Button
-          className="animate-subtle-pulse fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-2xl shadow-accent/40 z-50"
+          className="animate-subtle-pulse fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-2xl shadow-accent/40"
           onClick={() => setIsOpen(true)}
           aria-label="Open SYMBI Chat"
         >
@@ -161,7 +161,7 @@ export function SymbiFAB() {
                                 layout
                                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                                className="text-center mt-4"
+                                className="mt-4 text-center"
                               >
                                 <Image
                                   src={message.imageUrl}
