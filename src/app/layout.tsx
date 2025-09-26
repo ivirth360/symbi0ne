@@ -5,18 +5,12 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SymbiFAB } from '@/components/symbi-fab';
 import { cn } from '@/lib/utils';
-import { Archivo, IBM_Plex_Mono } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import './globals.css';
 
 const archivo = Archivo({
   subsets: ['latin'],
   variable: '--font-archivo',
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-ibm-plex-mono',
 });
 
 export const metadata: Metadata = {
@@ -44,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background font-body antialiased", archivo.variable, ibmPlexMono.variable)}>
+      <body className={cn("min-h-screen bg-background font-body antialiased", archivo.variable)}>
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>

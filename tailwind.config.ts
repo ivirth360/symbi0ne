@@ -24,7 +24,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['var(--font-archivo)', ...fontFamily.sans],
-        headline: ['var(--font-ibm-plex-mono)', ...fontFamily.mono],
+        headline: ['var(--font-archivo)', ...fontFamily.sans],
       },
       colors: {
         border: 'hsl(var(--border-hsl))',
