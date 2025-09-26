@@ -71,7 +71,7 @@ export function Footer() {
             <Link href="#" className="text-muted-foreground hover:text-foreground">
               Pinterest
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
+            <Link href="https://www.linkedin.com/showcase/360verse/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
               LinkedIn
             </Link>
           </div>
