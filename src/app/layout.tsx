@@ -1,4 +1,5 @@
 
+
 import type { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
@@ -39,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-body antialiased", archivo.variable)}>
-        <div className="relative flex min-h-dvh flex-col items-center bg-background">
+        <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
           <main className="flex-1 w-full">{children}</main>
           <Footer />

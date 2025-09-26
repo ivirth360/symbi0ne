@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Button } from './ui/button';
@@ -12,17 +13,23 @@ export function Footer() {
           <p className="mt-4 text-sm text-muted-foreground">
             The world’s first symbolic intelligence ecosystem.
           </p>
+           <p className="mt-2 text-xs text-muted-foreground">
+            Powered by <a href="https://ivirth.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">iViRTH</a>.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Contact us: <a href="mailto:hello@ivirth.com" className="underline hover:text-primary">hello@ivirth.com</a>
+          </p>
         </div>
         <div className="md:col-span-2">
           <h4 className="font-headline text-lg font-semibold">Ecosystem</h4>
           <div className="flex flex-col gap-2 mt-4">
-            <Link href="#about" className="text-muted-foreground hover:text-foreground">
+            <Link href="/#about" className="text-muted-foreground hover:text-foreground">
               About
             </Link>
-             <Link href="#services" className="text-muted-foreground hover:text-foreground">
+             <Link href="/#services" className="text-muted-foreground hover:text-foreground">
               Services
             </Link>
-            <Link href="#marketplace" className="text-muted-foreground hover:text-foreground">
+            <Link href="/#marketplace" className="text-muted-foreground hover:text-foreground">
               Marketplace
             </Link>
           </div>
@@ -30,13 +37,13 @@ export function Footer() {
         <div className="md:col-span-2">
           <h4 className="font-headline text-lg font-semibold">Legal</h4>
           <div className="flex flex-col gap-2 mt-4">
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
+            <Link href="/privacy-policy" className="text-muted-foreground hover:text-foreground">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
+            <Link href="/terms-of-service" className="text-muted-foreground hover:text-foreground">
               Terms of Service
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
+            <Link href="/licenses" className="text-muted-foreground hover:text-foreground">
               Licenses
             </Link>
           </div>
@@ -55,7 +62,7 @@ export function Footer() {
       <div className="border-t border-border/50">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Symbi0n. All rights reserved.
+            &copy; {new Date().getFullYear()} Symbi0n by iViRTH. All rights reserved.
           </p>
           <div className="flex gap-4">
             <Link href="#" className="text-muted-foreground hover:text-foreground">
