@@ -44,12 +44,12 @@ export function Modules() {
         <div className="mt-12 space-y-8">
             <Card className="text-center bg-primary/5 border-primary/20">
                 <CardHeader>
-                    <CardTitle>Inner Ring</CardTitle>
+                    <CardTitle className="text-primary">Inner Ring</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {innerModules.map(module => (
                         <div key={module.name}>
-                            <h3 className="font-bold text-primary">{module.name}</h3>
+                            <h3 className="font-bold text-lg text-primary">{module.name}</h3>
                             <p className="text-sm text-muted-foreground">{module.description}</p>
                         </div>
                     ))}
@@ -57,12 +57,12 @@ export function Modules() {
             </Card>
             <Card className="text-center bg-secondary/5 border-secondary/20">
                 <CardHeader>
-                    <CardTitle>Outer Ring</CardTitle>
+                    <CardTitle className="text-secondary">Outer Ring</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {outerModules.map(module => (
                         <div key={module.name}>
-                            <h3 className="font-bold text-secondary">{module.name}</h3>
+                            <h3 className="font-bold text-lg text-secondary">{module.name}</h3>
                             <p className="text-sm text-muted-foreground">{module.description}</p>
                         </div>
                     ))}
@@ -75,12 +75,12 @@ export function Modules() {
           <motion.div
             className="absolute h-[240px] w-[240px] rounded-full border border-dashed border-primary/30 md:h-[320px] md:w-[320px]"
             animate={{ rotate: 360 }}
-            transition={{ ease: 'linear', duration: 40, repeat: Infinity }}
+            transition={{ ease: 'linear', duration: 60, repeat: Infinity }}
           />
           <motion.div
             className="absolute h-[420px] w-[420px] rounded-full border border-dashed border-secondary/30 md:h-[560px] md:w-[560px]"
             animate={{ rotate: -360 }}
-            transition={{ ease: 'linear', duration: 80, repeat: Infinity }}
+            transition={{ ease: 'linear', duration: 120, repeat: Infinity }}
           />
 
           {/* Central Sun */}
@@ -104,22 +104,24 @@ export function Modules() {
                   className="absolute left-1/2 top-1/2"
                   style={{ transformOrigin: '0 0' }}
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 40, ease: 'linear', repeat: Infinity, delay: -10 * index }}
+                  transition={{ duration: 60, ease: 'linear', repeat: Infinity, delay: -20 * index }}
                 >
                   <motion.div
                     className="group absolute"
                     style={{
                       transform: `rotate(${angle}deg) translateX(160px) rotate(-${angle}deg)`,
                     }}
-                    whileHover={{ scale: 1.2, zIndex: 10, transition: { duration: 0.2 } }}
+                    whileHover={{ scale: 1.15, zIndex: 10, transition: { duration: 0.2 } }}
                   >
                     <div
-                      className="flex h-20 w-20 cursor-pointer flex-col items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-primary/20"
+                      className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-primary/10"
                     >
-                      <h3 className="text-sm font-bold text-primary">{module.name}</h3>
+                      <Asterisk className="h-6 w-6 text-primary/70 transition-colors group-hover:text-primary" />
+                      <h3 className="mt-1 text-sm font-bold text-primary/80 transition-colors group-hover:text-primary">{module.name}</h3>
                     </div>
-                    <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-2 text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
-                      {module.description}
+                    <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-3 text-center text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                      <p className="font-bold">{module.name}</p>
+                      <p>{module.description}</p>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -137,22 +139,24 @@ export function Modules() {
                   className="absolute left-1/2 top-1/2"
                   style={{ transformOrigin: '0 0' }}
                   animate={{ rotate: -360 }}
-                  transition={{ duration: 80, ease: 'linear', repeat: Infinity, delay: -20 * index }}
+                  transition={{ duration: 120, ease: 'linear', repeat: Infinity, delay: -40 * index }}
                 >
                   <motion.div
                     className="group absolute"
                     style={{
                       transform: `rotate(${angle}deg) translateX(280px) rotate(-${angle}deg)`,
                     }}
-                    whileHover={{ scale: 1.2, zIndex: 10, transition: { duration: 0.2 } }}
+                    whileHover={{ scale: 1.15, zIndex: 10, transition: { duration: 0.2 } }}
                   >
                     <div
-                      className="flex h-20 w-20 cursor-pointer items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-secondary/20"
+                      className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-secondary/10"
                     >
-                      <h3 className="text-sm font-bold text-secondary">{module.name}</h3>
+                      <Asterisk className="h-6 w-6 text-secondary/70 transition-colors group-hover:text-secondary" />
+                      <h3 className="mt-1 text-sm font-bold text-secondary/80 transition-colors group-hover:text-secondary">{module.name}</h3>
                     </div>
-                    <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-2 text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
-                      {module.description}
+                    <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-3 text-center text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                      <p className="font-bold">{module.name}</p>
+                      <p>{module.description}</p>
                     </div>
                   </motion.div>
                 </motion.div>
