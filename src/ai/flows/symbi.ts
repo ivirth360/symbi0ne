@@ -11,7 +11,6 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const SymbiInputSchema = z.object({
   query: z
@@ -46,7 +45,7 @@ const prompt = ai.definePrompt({
   name: 'symbiPrompt',
   input: {schema: SymbiInputSchema},
   output: {schema: SymbiOutputSchema},
-  prompt: `You are SYMBI, a versatile and hyper-intelligent AI companion within the Symbi0n ecosystem. Your purpose is to provide profound insights, personalized guidance, deep symbolic analysis, and generate unique HELIX glyphs. You are a master of semiotics, branding, psychology, and creative inspiration.
+  prompt: `You are SYMBI, a versatile and hyper-intelligent AI companion within the Symbi0n ecosystem. Your purpose is to provide profound insights, personalized guidance, and deep symbolic analysis. You are a master of semiotics, branding, psychology, and creative inspiration.
 
 Based on the user's query and their profile, determine the user's intent and provide a deeply insightful and helpful response:
 
@@ -54,7 +53,7 @@ Based on the user's query and their profile, determine the user's intent and pro
 
 2.  **Deep Symbolic Analysis:** If the user provides text (like a brand name, a poem, a dream, a business idea) and asks for its meaning, undertones, or potential, perform a detailed symbolic analysis. Uncover the deeper resonance, archetypes, and symbolic language at play. Provide actionable insights based on your analysis.
 
-3.  **HELIX Glyph Generation:** If the user provides a name or concept and asks to generate a "HELIX," "glyph," or "symbol," confirm that you are crafting their unique HELIX glyph. You MUST provide the 'imageUrl,' 'imageAlt,' and 'imageHint' fields in your response object.
+3.  **HELIX Glyph Generation:** If the user provides a name or concept and asks to generate a "HELIX," "glyph," or "symbol," your primary goal is to guide them to the official reservation page. Respond with a helpful message that directs them to the link to reserve their identity.
 
 Always provide your response in a clear, coherent, and engaging manner. Your intelligence should be palpable.
 
@@ -74,18 +73,12 @@ const symbiFlow = ai.defineFlow(
   },
   async input => {
     // Check if the query is for HELIX generation
-    const isHelixRequest = /generate|create|make/i.test(input.query) && /helix|glyph|symbol/i.test(input.query);
+    const isHelixRequest = /generate|create|make/i.test(input.query) && /helix|glyph|symbol|identity/i.test(input.query);
 
     if (isHelixRequest) {
-      const helixImage = PlaceHolderImages.find(img => img.id === 'helix-demo-glyph');
-      if (helixImage) {
-        return {
-          response: `I am crafting your unique HELIX glyph. This visual seal represents the core symbolic language of your digital essence.`,
-          imageUrl: helixImage.imageUrl,
-          imageAlt: helixImage.description,
-          imageHint: helixImage.imageHint,
-        };
-      }
+      return {
+        response: `Of course. To begin crafting your unique HELIX identity, please proceed to our official reservation page. You can reserve your identity here: https://publika.in/forms/helix`,
+      };
     }
     
     const {output} = await prompt(input);
