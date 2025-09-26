@@ -106,7 +106,7 @@ export function SymbiFAB() {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-2xl overflow-hidden p-0">
           <div className="ai-bg-gradient-animation z-0" />
-          <div className="relative z-10 flex h-full max-h-[80vh] flex-col bg-transparent">
+          <div className="relative z-10 flex h-full max-h-[80vh] flex-col bg-background">
             <DialogHeader className="p-6 pb-2">
               <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-gradient">
                 <Bot className="h-8 w-8" />
@@ -150,7 +150,7 @@ export function SymbiFAB() {
                             'max-w-[80%] rounded-lg px-4 py-2 text-sm shadow-md',
                             message.role === 'user'
                               ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground'
-                              : 'border border-border/20 bg-muted/50 text-muted-foreground backdrop-blur-sm'
+                              : 'border border-border/20 bg-muted text-muted-foreground'
                           )}
                         >
                           <p className="whitespace-pre-wrap">{message.content}</p>
@@ -195,7 +195,7 @@ export function SymbiFAB() {
                             <Bot className="h-5 w-5" />
                           </AvatarFallback>
                         </Avatar>
-                        <div className="flex items-center space-x-2 rounded-lg border border-border/20 bg-muted/50 px-4 py-2 text-sm text-muted-foreground shadow-md backdrop-blur-sm">
+                        <div className="flex items-center space-x-2 rounded-lg border border-border/20 bg-muted px-4 py-2 text-sm text-muted-foreground shadow-md">
                           <Loader2 className="h-4 w-4 animate-spin" />
                           <span>Thinking...</span>
                         </div>
@@ -212,7 +212,7 @@ export function SymbiFAB() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                   disabled={isPending}
-                  className="h-11 flex-1 rounded-full border-border/30 bg-background/50 focus-visible:ring-offset-0"
+                  className="h-11 flex-1 rounded-full border-border/30 bg-background/80 focus-visible:ring-offset-0"
                 />
                 <Button
                   type="submit"
