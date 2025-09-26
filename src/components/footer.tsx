@@ -43,9 +43,6 @@ export function Footer() {
             <Link href="/terms-of-service" className="text-muted-foreground hover:text-foreground">
               Terms of Service
             </Link>
-            <Link href="/licenses" className="text-muted-foreground hover:text-foreground">
-              Licenses
-            </Link>
           </div>
         </div>
         <div className="md:col-span-4">
