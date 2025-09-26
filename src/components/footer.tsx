@@ -65,11 +65,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Symbi0n by iViRTH. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
+            <Link href="https://www.instagram.com/symbion.ivirth?igsh=MTQ4a3JlMXQzajFtdQ==" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
               Instagram
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground">
-              Pinterest
             </Link>
             <Link href="https://www.linkedin.com/showcase/360verse/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
               LinkedIn
