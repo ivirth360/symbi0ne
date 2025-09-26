@@ -62,7 +62,7 @@ export function Modules() {
                 <CardContent className="space-y-4">
                     {outerModules.map(module => (
                         <div key={module.name}>
-                            <h3 className="font-bold text-lg text-secondary">{module.name}</h3>
+                            <h3 className="font-bold text-lg text-secondary">{module.name === '360ne' ? '360NE' : module.name}</h3>
                             <p className="text-sm text-muted-foreground">{module.description}</p>
                         </div>
                     ))}
@@ -70,99 +70,101 @@ export function Modules() {
             </Card>
         </div>
       ) : (
-        <div className="relative mt-12 flex h-[500px] w-full items-center justify-center lg:h-[600px] lg:mt-20">
-          {/* Orbital Paths */}
-          <motion.div
-            className="absolute h-[240px] w-[240px] rounded-full border border-dashed border-primary/30 md:h-[320px] md:w-[320px]"
-            animate={{ rotate: 360 }}
-            transition={{ ease: 'linear', duration: 60, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute h-[420px] w-[420px] rounded-full border border-dashed border-secondary/30 md:h-[560px] md:w-[560px]"
-            animate={{ rotate: -360 }}
-            transition={{ ease: 'linear', duration: 120, repeat: Infinity }}
-          />
-
-          {/* Central Sun */}
-          <motion.div
-            className="relative flex h-32 w-32 items-center justify-center rounded-full bg-primary/10 text-center font-bold text-primary shadow-2xl shadow-primary/20"
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            SYMBI
-          </motion.div>
-
-          {/* Inner Planets */}
-          <div className="absolute inset-0">
-            {innerModules.map((module, index) => {
-              const angle = (index / innerModules.length) * 360;
-              return (
+        <div className="mt-12 flex w-full items-center justify-center lg:mt-20">
+            <div className="relative h-[500px] w-[560px] lg:h-[600px]">
+                {/* Orbital Paths */}
                 <motion.div
-                  key={module.name}
-                  className="absolute left-1/2 top-1/2"
-                  style={{ transformOrigin: '0 0' }}
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 60, ease: 'linear', repeat: Infinity, delay: -20 * index }}
-                >
-                  <motion.div
-                    className="group absolute"
-                    style={{
-                      transform: `rotate(${angle}deg) translateX(160px) rotate(-${angle}deg)`,
-                    }}
-                    whileHover={{ scale: 1.15, zIndex: 10, transition: { duration: 0.2 } }}
-                  >
-                    <div
-                      className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-primary/10"
-                    >
-                      <Asterisk className="h-6 w-6 text-primary/70 transition-colors group-hover:text-primary" />
-                      <h3 className="mt-1 text-sm font-bold text-primary/80 transition-colors group-hover:text-primary">{module.name}</h3>
-                    </div>
-                    <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-3 text-center text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
-                      <p className="font-bold">{module.name}</p>
-                      <p>{module.description}</p>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Outer Planets */}
-          <div className="absolute inset-0">
-            {outerModules.map((module, index) => {
-              const angle = 15 + (index / outerModules.length) * 360;
-              return (
+                    className="absolute inset-0 m-auto h-[320px] w-[320px] rounded-full border border-dashed border-primary/30"
+                    animate={{ rotate: 360 }}
+                    transition={{ ease: 'linear', duration: 60, repeat: Infinity }}
+                />
                 <motion.div
-                  key={module.name}
-                  className="absolute left-1/2 top-1/2"
-                  style={{ transformOrigin: '0 0' }}
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 120, ease: 'linear', repeat: Infinity, delay: -40 * index }}
+                    className="absolute inset-0 m-auto h-[560px] w-[560px] rounded-full border border-dashed border-secondary/30"
+                    animate={{ rotate: -360 }}
+                    transition={{ ease: 'linear', duration: 120, repeat: Infinity }}
+                />
+
+                {/* Central Sun */}
+                <motion.div
+                    className="absolute inset-0 m-auto flex h-32 w-32 items-center justify-center rounded-full bg-primary/10 text-center font-bold text-primary shadow-2xl shadow-primary/20"
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <motion.div
-                    className="group absolute"
-                    style={{
-                      transform: `rotate(${angle}deg) translateX(280px) rotate(-${angle}deg)`,
-                    }}
-                    whileHover={{ scale: 1.15, zIndex: 10, transition: { duration: 0.2 } }}
-                  >
-                    <div
-                      className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-secondary/10"
-                    >
-                      <Asterisk className="h-6 w-6 text-secondary/70 transition-colors group-hover:text-secondary" />
-                      <h3 className="mt-1 text-sm font-bold text-secondary/80 transition-colors group-hover:text-secondary">{module.name}</h3>
-                    </div>
-                    <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-3 text-center text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
-                      <p className="font-bold">{module.name}</p>
-                      <p>{module.description}</p>
-                    </div>
-                  </motion.div>
+                    SYMBI
                 </motion.div>
-              );
-            })}
-          </div>
+
+                {/* Inner Planets */}
+                <div className="absolute inset-0">
+                    {innerModules.map((module, index) => {
+                    const angle = (index / innerModules.length) * 360;
+                    return (
+                        <motion.div
+                        key={module.name}
+                        className="absolute left-1/2 top-1/2"
+                        style={{ transformOrigin: '0 0' }}
+                        animate={{ rotate: 360 + angle }}
+                        transition={{ duration: 60, ease: 'linear', repeat: Infinity, delay: -20 * index }}
+                        >
+                        <motion.div
+                            className="group absolute"
+                            style={{
+                            transform: `translateX(160px) rotate(-${360 + angle}deg)`,
+                            }}
+                            whileHover={{ scale: 1.15, zIndex: 10, transition: { duration: 0.2 } }}
+                        >
+                            <div
+                            className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-primary/10"
+                            >
+                            <Asterisk className="h-6 w-6 text-primary/70 transition-colors group-hover:text-primary" />
+                            <h3 className="mt-1 text-sm font-bold text-primary/80 transition-colors group-hover:text-primary">{module.name}</h3>
+                            </div>
+                            <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-3 text-center text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                            <p className="font-bold">{module.name}</p>
+                            <p>{module.description}</p>
+                            </div>
+                        </motion.div>
+                        </motion.div>
+                    );
+                    })}
+                </div>
+
+                {/* Outer Planets */}
+                <div className="absolute inset-0">
+                    {outerModules.map((module, index) => {
+                    const angle = 15 + (index / outerModules.length) * 360;
+                    return (
+                        <motion.div
+                        key={module.name}
+                        className="absolute left-1/2 top-1/2"
+                        style={{ transformOrigin: '0 0' }}
+                        animate={{ rotate: -360 + angle }}
+                        transition={{ duration: 120, ease: 'linear', repeat: Infinity, delay: -40 * index }}
+                        >
+                        <motion.div
+                            className="group absolute"
+                            style={{
+                            transform: `translateX(280px) rotate(-${-360 + angle}deg)`,
+                            }}
+                            whileHover={{ scale: 1.15, zIndex: 10, transition: { duration: 0.2 } }}
+                        >
+                            <div
+                            className="flex h-24 w-24 cursor-pointer flex-col items-center justify-center rounded-full bg-card p-2 text-center shadow-lg transition-all group-hover:bg-secondary/10"
+                            >
+                            <Asterisk className="h-6 w-6 text-secondary/70 transition-colors group-hover:text-secondary" />
+                            <h3 className="mt-1 text-sm font-bold text-secondary/80 transition-colors group-hover:text-secondary">{module.name === '360ne' ? '360NE' : module.name}</h3>
+                            </div>
+                            <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-48 -translate-x-1/2 rounded-md bg-popover p-3 text-center text-xs text-popover-foreground opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
+                            <p className="font-bold">{module.name === '360ne' ? '360NE' : module.name}</p>
+                            <p>{module.description}</p>
+                            </div>
+                        </motion.div>
+                        </motion.div>
+                    );
+                    })}
+                </div>
+            </div>
         </div>
       )}
 
