@@ -17,7 +17,7 @@ const innerModules = [
 const outerModules = [
   { name: 'ONE', description: 'The Foundation: Your singular, verifiable self in the digital universe.' },
   { name: '360', description: 'The Ecosystem View: Holistic, 360-degree insights into your symbolic world.' },
-  { name: '360ne', description: 'The Unified Vision: A singular, all-encompassing perspective powering predictive intelligence.' },
+  { name: '360NE', description: 'The Unified Vision: A singular, all-encompassing perspective powering predictive intelligence.' },
 ]
 
 export function Modules() {
