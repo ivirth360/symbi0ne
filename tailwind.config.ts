@@ -23,8 +23,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: [...fontFamily.sans],
-        headline: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        body: ['var(--font-work-sans)', ...fontFamily.sans],
+        headline: ['var(--font-ibm-plex-mono)', ...fontFamily.mono],
       },
       colors: {
         border: 'hsl(var(--border-hsl))',

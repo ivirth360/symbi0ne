@@ -5,12 +5,18 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SymbiFAB } from '@/components/symbi-fab';
 import { cn } from '@/lib/utils';
-import { Space_Grotesk } from 'next/font/google';
+import { Work_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 
-const spaceGrotesk = Space_Grotesk({
+const workSans = Work_Sans({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-work-sans',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-ibm-plex-mono',
 });
 
 export const metadata: Metadata = {
@@ -38,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background font-body antialiased", spaceGrotesk.variable)}>
+      <body className={cn("min-h-screen bg-background font-body antialiased", workSans.variable, ibmPlexMono.variable)}>
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>
