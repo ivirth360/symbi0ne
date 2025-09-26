@@ -44,7 +44,7 @@ export function Marketplace() {
           Symbolic Asset Auction
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-foreground/80">
-          A curated marketplace for acquiring and listing unique symbolic assets. Secure your piece of the symbolic economy, with provenance guaranteed by Ekam Lipi.
+          A curated marketplace for acquiring and listing unique physical, digital, and symbolic collections. Secure your piece of the symbolic economy, with provenance guaranteed by Ekam Lipi.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="w-full sm:w-auto">
