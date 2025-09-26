@@ -33,19 +33,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 6% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 45 96% 51%;
+    --primary: 45 96% 61%; /* Brighter Cosmic Gold for Dark Mode */
     --primary-foreground: 240 5.9% 10%;
-    --secondary: 350 85% 55%;
+    --secondary: 350 90% 65%; /* Brighter Crimson Elemental Red for Dark Mode */
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 45 96% 51%;
+    --accent: 45 96% 61%; /* Brighter Cosmic Gold for Dark Mode */
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 45 96% 51%;
+    --ring: 45 96% 61%;
   }
 }
 
