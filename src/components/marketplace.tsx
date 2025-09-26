@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { SectionWrapper } from './section-wrapper';
-import { ArrowRight, Layers, List } from 'lucide-react';
+import { Layers, List } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const itemVariants = {
@@ -47,13 +47,13 @@ export function Marketplace() {
           A curated marketplace for acquiring and listing unique physical, digital, and symbolic collections. Secure your piece of the symbolic economy, with provenance guaranteed by Ekam Lipi.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="w-full sm:w-auto">
+            <Button asChild size="lg">
                 <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
                     <Layers className="mr-2 h-4 w-4" />
                     Express Interest to Buy
                 </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+            <Button asChild size="lg" variant="outline">
                 <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
                     <List className="mr-2 h-4 w-4" />
                     Apply to List Your Asset

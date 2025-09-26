@@ -19,23 +19,23 @@ export default function LicensesPage() {
         The SYMBI0N platform is proudly built upon open-source software. We are grateful to the developers and communities who create and maintain these essential tools. Below is a list of the primary open-source libraries we use, along with their respective licenses.
       </p>
 
-      <div className="mt-8">
-        <table>
+      <div className="mt-8 overflow-x-auto">
+        <table className="w-full">
           <thead>
-            <tr>
-              <th>Library</th>
-              <th>License</th>
+            <tr className="border-b">
+              <th className="py-2 px-4 text-left">Library</th>
+              <th className="py-2 px-4 text-left">License</th>
             </tr>
           </thead>
           <tbody>
             {libraries.map((lib) => (
-              <tr key={lib.name}>
-                <td>
-                  <a href={lib.url} target="_blank" rel="noopener noreferrer">
+              <tr key={lib.name} className="border-b">
+                <td className="py-2 px-4">
+                  <a href={lib.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-primary/80">
                     {lib.name}
                   </a>
                 </td>
-                <td>{lib.license}</td>
+                <td className="py-2 px-4">{lib.license}</td>
               </tr>
             ))}
           </tbody>

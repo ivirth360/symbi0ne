@@ -16,7 +16,7 @@ export function LegalPageLayout({
             {title}
           </h1>
         </header>
-        <article className="prose prose-neutral mx-auto dark:prose-invert prose-headings:font-headline prose-headings:text-foreground prose-a:text-primary hover:prose-a:text-primary/80">
+        <article className="prose prose-neutral mx-auto dark:prose-invert prose-headings:font-headline prose-headings:font-semibold prose-headings:text-foreground prose-a:text-primary hover:prose-a:text-primary/80">
           {children}
         </article>
       </div>
