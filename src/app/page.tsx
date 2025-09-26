@@ -4,6 +4,7 @@ import { Marketplace } from '@/components/marketplace';
 import { About } from '@/components/about';
 import { Services } from '@/components/services';
 import { Modules } from '@/components/modules';
+import { Indexes } from '@/components/indexes';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <About />
         <Services />
         <Modules />
+        <Indexes />
         <Marketplace />
         <Membership />
       </div>

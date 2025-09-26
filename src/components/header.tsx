@@ -14,6 +14,7 @@ const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#modules', label: 'Modules' },
+  { href: '#indexes', label: 'Indexes' },
   { href: '#membership', label: 'Memberships' },
   { href: '#marketplace', label: 'Auction' },
 ];
