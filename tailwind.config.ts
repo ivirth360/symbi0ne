@@ -1,3 +1,4 @@
+
 import type { Config } from 'tailwindcss';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
@@ -22,7 +23,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-work-sans)', ...fontFamily.sans],
+        body: [...fontFamily.sans],
         headline: ['var(--font-space-grotesk)', ...fontFamily.sans],
       },
       colors: {
