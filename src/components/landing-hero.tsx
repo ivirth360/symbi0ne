@@ -21,7 +21,7 @@ export function LandingHero() {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-6 font-headline text-lg font-bold text-primary">
-            🔮 Your AI Companion, Your Digital Seal, Your Symbolic Universe.
+            🔮 Your AI Companion, Your Personal Sigil, Your Brand Seal.
           </div>
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
             <span className="text-gradient">

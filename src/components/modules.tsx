@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const modules = [
   { name: 'SYMBI', description: 'Your Companion Intelligence' },
   { name: 'HELIX', description: 'Strand of Identity (UID + Digital Twin + Elemental Alignment)' },
-  { name: 'Ekam Lipo', description: 'Unified Symbol / Seal' },
+  { name: 'Ekam Lipo', description: 'The generator for your personal Sigil or brand Seal.' },
   { name: 'Ekam Lipi', description: 'Unified Language of Symbols' },
   { name: 'Codex & Seal Systems', description: 'Knowledge, Archetypes, Research' },
 ];
