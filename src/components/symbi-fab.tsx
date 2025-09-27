@@ -1,235 +1,35 @@
+
 'use client';
 
-import { useState, useTransition, useRef, useEffect } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { symbi } from '@/ai/flows/symbi';
-import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
-
-interface Message {
-  role: 'user' | 'bot';
-  content: string;
-  imageUrl?: string;
-  imageAlt?: string;
-  imageHint?: string;
-}
+import { Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function SymbiFAB() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: 'bot',
-      content:
-        'Welcome to the Symbi0n Ecosystem. I am SYMBI, your personalized AI companion. Ask for a symbolic analysis of a name or idea, or request your unique HELIX glyph.',
-    },
-  ]);
-  const [input, setInput] = useState('');
-  const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
-  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (isOpen && scrollAreaRef.current) {
-      setTimeout(() => {
-        scrollAreaRef.current?.scrollTo({
-          top: scrollAreaRef.current.scrollHeight,
-          behavior: 'smooth',
-        });
-      }, 100);
-    }
-  }, [messages, isOpen]);
-
-  const handleSend = () => {
-    if (!input.trim()) return;
-
-    const userMessage: Message = { role: 'user', content: input };
-    setMessages((prev) => [...prev, userMessage]);
-    const currentInput = input;
-    setInput('');
-
-    startTransition(async () => {
-      try {
-        const result = await symbi({ query: currentInput });
-        if (result.response) {
-          const botMessage: Message = {
-            role: 'bot',
-            content: result.response,
-            imageUrl: result.imageUrl,
-            imageAlt: result.imageAlt,
-            imageHint: result.imageHint,
-          };
-          setMessages((prev) => [...prev, botMessage]);
-        } else {
-          throw new Error('No response from companion.');
-        }
-      } catch (error) {
-        toast({
-          title: 'Companion Error',
-          description: 'Could not get a response. Please try again.',
-          variant: 'destructive',
-        });
-        setMessages((prev) =>
-          prev.filter((msg) => msg.content !== userMessage.content)
-        );
-      }
+  const handleClick = () => {
+    toast({
+      title: 'SYMBI AI Companion',
+      description: 'Coming soon. The future of personalized AI is on its way.',
     });
   };
 
   return (
-    <>
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
+    <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: 1, duration: 0.5 }}
+    >
+      <Button
+        className="animate-subtle-pulse fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-2xl shadow-accent/40"
+        onClick={handleClick}
+        aria-label="Open SYMBI Chat"
       >
-        <Button
-          className="animate-subtle-pulse fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-2xl shadow-accent/40"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open SYMBI Chat"
-        >
-          <Sparkles className="h-8 w-8" />
-        </Button>
-      </motion.div>
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl overflow-hidden p-0">
-          <div className="relative flex h-full max-h-[80vh] flex-col bg-background">
-            <div className="ai-bg-gradient-animation z-0" />
-            <div className="relative z-10 flex h-full flex-col">
-              <DialogHeader className="p-6 pb-2">
-                <DialogTitle className="flex items-center gap-2 font-headline text-2xl text-gradient">
-                  <Bot className="h-8 w-8" />
-                  <span>Chat with SYMBI</span>
-                </DialogTitle>
-                <DialogDescription className="text-muted-foreground/80">
-                  Your personal AI guide to the symbolic universe.
-                </DialogDescription>
-              </DialogHeader>
-              <div className="flex flex-1 flex-col space-y-4 overflow-hidden p-6 pt-2">
-                <ScrollArea
-                  className="flex-grow pr-4"
-                  ref={scrollAreaRef}
-                >
-                  <AnimatePresence initial={false}>
-                    <motion.div className="space-y-4">
-                      {messages.map((message, index) => (
-                        <motion.div
-                          key={index}
-                          layout
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.3 }}
-                          className={cn(
-                            'flex items-start gap-3',
-                            message.role === 'user'
-                              ? 'justify-end'
-                              : 'justify-start'
-                          )}
-                        >
-                          {message.role === 'bot' && (
-                            <Avatar className="h-8 w-8 border border-primary/20">
-                              <AvatarFallback className="bg-primary/10 text-primary">
-                                <Bot className="h-5 w-5" />
-                              </AvatarFallback>
-                            </Avatar>
-                          )}
-                          <div
-                            className={cn(
-                              'max-w-[80%] rounded-lg px-4 py-2 text-sm shadow-md',
-                              message.role === 'user'
-                                ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground'
-                                : 'border border-border/20 bg-muted text-muted-foreground'
-                            )}
-                          >
-                            <p className="whitespace-pre-wrap">{message.content}</p>
-                            {message.imageUrl && (
-                              <motion.div
-                                key="generated"
-                                layout
-                                initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                className="mt-4 text-center"
-                              >
-                                <Image
-                                  src={message.imageUrl}
-                                  alt={message.imageAlt || 'Generated Glyph'}
-                                  data-ai-hint={message.imageHint || ''}
-                                  width={300}
-                                  height={300}
-                                  className="mx-auto rounded-full object-cover shadow-2xl shadow-primary/20 animate-in fade-in zoom-in-75 duration-700"
-                                />
-                              </motion.div>
-                            )}
-                          </div>
-                          {message.role === 'user' && (
-                            <Avatar className="h-8 w-8 border border-border/20">
-                              <AvatarFallback>
-                                <User className="h-5 w-5" />
-                              </AvatarFallback>
-                            </Avatar>
-                          )}
-                        </motion.div>
-                      ))}
-                      {isPending && (
-                        <motion.div
-                          layout
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="flex items-start gap-3"
-                        >
-                          <Avatar className="h-8 w-8 border border-primary/20">
-                            <AvatarFallback className="bg-primary/10 text-primary">
-                              <Bot className="h-5 w-5" />
-                            </AvatarFallback>
-                          </Avatar>
-                          <div className="flex items-center space-x-2 rounded-lg border border-border/20 bg-muted px-4 py-2 text-sm text-muted-foreground shadow-md">
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                            <span>Thinking...</span>
-                          </div>
-                        </motion.div>
-                      )}
-                    </motion.div>
-                  </AnimatePresence>
-                </ScrollArea>
-                <div className="flex w-full items-center space-x-2">
-                  <Input
-                    type="text"
-                    placeholder="Ask your companion..."
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                    disabled={isPending}
-                    className="h-11 flex-1 rounded-full border-border/30 bg-background/80 focus-visible:ring-offset-0"
-                  />
-                  <Button
-                    type="submit"
-                    size="icon"
-                    onClick={handleSend}
-                    disabled={isPending || !input.trim()}
-                    className="h-11 w-11 flex-shrink-0"
-                  >
-                    <Send className="h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
-    </>
+        <Sparkles className="h-8 w-8" />
+      </Button>
+    </motion.div>
   );
 }
