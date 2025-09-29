@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '../ui/badge';
 
 type Product = {
   id: string;
@@ -42,7 +41,7 @@ export function ProductCard({ product }: { product: Product }) {
         </CardHeader>
         <CardContent className="flex-grow p-4">
           <CardTitle className="text-xl">{product.name}</CardTitle>
-          <p className="text-sm text-muted-foreground mt-1">{product.description}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{product.description}</p>
         </CardContent>
         <CardFooter className="flex items-center justify-between p-4 pt-0">
           <p className="text-lg font-bold">{product.price}</p>
