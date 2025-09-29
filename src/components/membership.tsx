@@ -38,7 +38,7 @@ const tiers = [
         'Create your own digital space',
       ],
       cta: 'For Brands',
-      isPopular: false,
+      isPopular: true,
     },
     {
       name: 'Enterprise',
@@ -49,7 +49,7 @@ const tiers = [
         'Dedicated Research & Support',
       ],
       cta: 'Book Consultation',
-      isPopular: true,
+      isPopular: false,
     },
 ];
 
