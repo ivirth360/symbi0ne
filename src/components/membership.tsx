@@ -21,27 +21,29 @@ import { Label } from './ui/label';
 const tiersData = {
   annual: [
     {
-      name: 'Individual Basic',
-      price: '₹5,000',
+      name: 'Individual',
+      price: '₹19,999',
       period: '/ year',
       features: [
         'HELIX ID Creation',
         'Personalized SYMBI Companion',
         'Basic Asset Wallet',
         'Basic Daily Routine Analysis',
+        'Create your own digital space',
       ],
       cta: 'Get Started',
       isPopular: false,
     },
     {
-      name: 'Brand Basic',
-      price: '₹50,000',
+      name: 'Brand',
+      price: '₹1,99,999',
       period: '/ year',
       features: [
         'Brand HELIX Identity',
         'SYMBI AI Integration & Insights',
         'Symbolic Audience Analysis',
         'Brand-level Data Analysis',
+        'Create your own digital space',
       ],
       cta: 'For Brands',
       isPopular: false,
@@ -62,27 +64,29 @@ const tiersData = {
   ],
   monthly: [
     {
-      name: 'Individual Basic',
-      price: '₹499',
+      name: 'Individual',
+      price: '₹1,999',
       period: '/ month',
       features: [
         'HELIX ID Creation',
         'Personalized SYMBI Companion',
         'Basic Asset Wallet',
         'Basic Daily Routine Analysis',
+        'Create your own digital space',
       ],
       cta: 'Get Started',
       isPopular: false,
     },
     {
-      name: 'Brand Basic',
-      price: '₹4,999',
+      name: 'Brand',
+      price: '₹19,999',
       period: '/ month',
       features: [
         'Brand HELIX Identity',
         'SYMBI AI Integration & Insights',
         'Symbolic Audience Analysis',
         'Brand-level Data Analysis',
+        'Create your own digital space',
       ],
       cta: 'For Brands',
       isPopular: false,
