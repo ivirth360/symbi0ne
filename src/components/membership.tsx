@@ -1,6 +1,5 @@
 
 'use client';
-import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -15,15 +14,10 @@ import { SectionWrapper } from './section-wrapper';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { Switch } from './ui/switch';
-import { Label } from './ui/label';
 
-const tiersData = {
-  annual: [
+const tiers = [
     {
       name: 'Individual',
-      price: '₹19,999',
-      period: '/ year',
       features: [
         'HELIX ID Creation',
         'Personalized SYMBI Companion',
@@ -36,8 +30,6 @@ const tiersData = {
     },
     {
       name: 'Brand',
-      price: '₹1,99,999',
-      period: '/ year',
       features: [
         'Brand HELIX Identity',
         'SYMBI AI Integration & Insights',
@@ -50,8 +42,6 @@ const tiersData = {
     },
     {
       name: 'Enterprise',
-      price: 'Contact Us',
-      period: '',
       features: [
         'Custom Symbolic AI Solutions',
         'Proprietary Symbolic Modeling',
@@ -61,51 +51,7 @@ const tiersData = {
       cta: 'Book Consultation',
       isPopular: true,
     },
-  ],
-  monthly: [
-    {
-      name: 'Individual',
-      price: '₹1,999',
-      period: '/ month',
-      features: [
-        'HELIX ID Creation',
-        'Personalized SYMBI Companion',
-        'Basic Asset Wallet',
-        'Basic Daily Routine Analysis',
-        'Create your own digital space',
-      ],
-      cta: 'Get Started',
-      isPopular: false,
-    },
-    {
-      name: 'Brand',
-      price: '₹19,999',
-      period: '/ month',
-      features: [
-        'Brand HELIX Identity',
-        'SYMBI AI Integration & Insights',
-        'Symbolic Audience Analysis',
-        'Brand-level Data Analysis',
-        'Create your own digital space',
-      ],
-      cta: 'For Brands',
-      isPopular: false,
-    },
-    {
-      name: 'Enterprise',
-      price: 'Contact Us',
-      period: '',
-      features: [
-        'Custom Symbolic AI Solutions',
-        'Proprietary Symbolic Modeling',
-        'Full Data & Privacy Control',
-        'Dedicated Research & Support',
-      ],
-      cta: 'Book Consultation',
-      isPopular: true,
-    },
-  ]
-};
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -130,9 +76,6 @@ const itemVariants = {
 
 
 export function Membership() {
-  const [isAnnual, setIsAnnual] = useState(true);
-  const tiers = isAnnual ? tiersData.annual : tiersData.monthly;
-
   return (
     <SectionWrapper id="membership">
       <motion.div 
@@ -148,27 +91,6 @@ export function Membership() {
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Choose the membership tier that aligns with your journey. Unlock powerful tools for identity, creation, and growth in the symbolic economy.
         </p>
-      </motion.div>
-
-      <motion.div
-        className="my-8 flex items-center justify-center gap-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={itemVariants}
-      >
-        <Label htmlFor="billing-cycle" className={cn(!isAnnual && 'text-muted-foreground')}>
-          Monthly
-        </Label>
-        <Switch
-          id="billing-cycle"
-          checked={isAnnual}
-          onCheckedChange={setIsAnnual}
-          aria-label="Toggle between monthly and annual billing"
-        />
-        <Label htmlFor="billing-cycle" className={cn(isAnnual && 'text-muted-foreground')}>
-          Annual (Save 20%)
-        </Label>
       </motion.div>
 
       <motion.div 
@@ -193,11 +115,8 @@ export function Membership() {
                   </div>
                 )}
                 <CardTitle className="text-center text-2xl">{tier.name}</CardTitle>
-                <CardDescription className="text-center text-4xl font-bold text-foreground">
-                  {tier.price}
-                  <span className="text-base font-normal text-muted-foreground">
-                    {tier.period}
-                  </span>
+                <CardDescription className="text-center">
+                  &nbsp;
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
