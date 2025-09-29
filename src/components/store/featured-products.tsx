@@ -36,6 +36,30 @@ const products = [
     imageUrl: 'https://picsum.photos/seed/yodha-bot/600/400',
     imageHint: 'wood robot'
   },
+  {
+    id: 'bamboo-mug',
+    name: 'Bamboo Mug',
+    description: 'Morning Ritual',
+    price: '₹499',
+    imageUrl: 'https://picsum.photos/seed/bamboo-mug/600/400',
+    imageHint: 'bamboo mug'
+  },
+  {
+    id: 'bamboo-tumblr',
+    name: 'Bamboo Tumbler',
+    description: 'Eco-conscious journeys',
+    price: '₹799',
+    imageUrl: 'https://picsum.photos/seed/bamboo-tumbler/600/400',
+    imageHint: 'bamboo tumbler'
+  },
+  {
+    id: 'skittles-game',
+    name: 'Skittles Game',
+    description: 'Heritage Play [B2B]',
+    price: 'From ₹15,000',
+    imageUrl: 'https://picsum.photos/seed/skittles-game/600/400',
+    imageHint: 'wooden skittles'
+  },
 ];
 
 const containerVariants = {
