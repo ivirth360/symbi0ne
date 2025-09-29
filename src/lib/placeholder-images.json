@@ -29,6 +29,12 @@
       "description": "Abstract image for auction background",
       "imageUrl": "https://images.unsplash.com/photo-1557682250-33bd709cbe85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMHB1cnBsZSUyMGJsdWV8ZW58MHx8fHwxNzU4ODgyNDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract purple"
+    },
+    {
+      "id": "store-hero-bg",
+      "description": "Abstract image for store hero background",
+      "imageUrl": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGNvbG9yZnVsJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NTg5NzM4NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "colorful background"
     }
   ]
 }

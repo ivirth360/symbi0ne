@@ -1,26 +1,23 @@
 'use client';
 import Link from 'next/link';
-import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
-import { Menu, ArrowRight } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
+import { Logo } from '../logo';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#modules', label: 'Modules' },
-  { href: '#indexes', label: 'Indexes' },
-  { href: '#membership', label: 'Memberships' },
-  { href: '/marketplace/store', label: 'Store' },
+  { href: '/', label: 'Home' },
+  { href: '#shop', label: 'Shop' },
+  { href: '#personalisation', label: 'Personalisation' },
+  { href: '#about', label: 'About Us' },
+  { href: '#eco-impact', label: 'Eco-Impact' },
+  { href: '#contact', label: 'Contact' },
 ];
 
-export function Header() {
+export function StoreNav() {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center">
@@ -40,10 +37,9 @@ export function Header() {
           </ul>
         </nav>
         <div className="ml-auto flex items-center space-x-2">
-          <Button asChild className="hidden sm:inline-flex">
-            <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer">
-              Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button variant="ghost" size="icon">
+            <ShoppingCart className="h-5 w-5" />
+            <span className="sr-only">Cart</span>
           </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
@@ -57,26 +53,19 @@ export function Header() {
                 <Logo className="text-2xl mb-8" />
                 <nav>
                   <ul className="flex flex-col space-y-4">
-                  {navLinks.map(({ href, label }) => (
-                    <li key={href}>
-                      <Link
-                        href={href}
-                        className="text-lg text-muted-foreground transition-colors hover:text-foreground"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
+                    {navLinks.map(({ href, label }) => (
+                      <li key={href}>
+                        <Link
+                          href={href}
+                          className="text-lg text-muted-foreground transition-colors hover:text-foreground"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </nav>
-                <div className="mt-8 flex flex-col space-y-4">
-                   <Button asChild>
-                    <Link href="https://publika.in/forms/helix" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
-                      Reserve Identity <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
               </div>
             </SheetContent>
           </Sheet>
