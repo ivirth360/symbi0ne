@@ -1,4 +1,6 @@
+
 'use client';
+import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -13,74 +15,93 @@ import { SectionWrapper } from './section-wrapper';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import { Switch } from './ui/switch';
+import { Label } from './ui/label';
 
-const tiers = [
-  {
-    name: 'Individual Basic',
-    price: '₹5,000',
-    period: '/ year',
-    features: [
-      'HELIX ID Creation',
-      'Personalized SYMBI Companion',
-      'Basic Asset Wallet',
-      'Basic Daily Routine Analysis',
-    ],
-    cta: 'Get Started',
-    isPopular: false,
-  },
-  {
-    name: 'Individual Pro',
-    price: '₹15,000',
-    period: '/ year',
-    features: [
-      'HELIX ID & Digital Twin',
-      'Advanced SYMBI Personalization',
-      'Deep Routine & Lifestyle Insights',
-      'Marketplace Auction Access',
-    ],
-    cta: 'Go Pro',
-    isPopular: true,
-  },
-  {
-    name: 'Brand Basic',
-    price: '₹50,000',
-    period: '/ year',
-    features: [
-      'Brand HELIX Identity',
-      'SYMBI AI Integration & Insights',
-      'Symbolic Audience Analysis',
-      'Brand-level Data Analysis',
-    ],
-    cta: 'For Brands',
-    isPopular: false,
-  },
-  {
-    name: 'Brand Pro',
-    price: '₹2,50,000',
-    period: '/ year',
-    features: [
-      'Full Brand Identity Suite',
-      'SYMBI AI as a Service (SaaS)',
-      'Brand Asset Monetization',
-      'Predictive Symbolic Modeling',
-    ],
-    cta: 'Brand Pro',
-    isPopular: false,
-  },
-  {
-    name: 'Enterprise',
-    price: 'Contact Us',
-    period: '',
-    features: [
-      'Custom Symbolic AI Solutions',
-      'Proprietary Symbolic Modeling',
-      'Full Data & Privacy Control',
-      'Dedicated Research & Support',
-    ],
-    cta: 'Book Consultation',
-    isPopular: false,
-  },
-];
+const tiersData = {
+  annual: [
+    {
+      name: 'Individual Basic',
+      price: '₹5,000',
+      period: '/ year',
+      features: [
+        'HELIX ID Creation',
+        'Personalized SYMBI Companion',
+        'Basic Asset Wallet',
+        'Basic Daily Routine Analysis',
+      ],
+      cta: 'Get Started',
+      isPopular: false,
+    },
+    {
+      name: 'Brand Basic',
+      price: '₹50,000',
+      period: '/ year',
+      features: [
+        'Brand HELIX Identity',
+        'SYMBI AI Integration & Insights',
+        'Symbolic Audience Analysis',
+        'Brand-level Data Analysis',
+      ],
+      cta: 'For Brands',
+      isPopular: false,
+    },
+    {
+      name: 'Enterprise',
+      price: 'Contact Us',
+      period: '',
+      features: [
+        'Custom Symbolic AI Solutions',
+        'Proprietary Symbolic Modeling',
+        'Full Data & Privacy Control',
+        'Dedicated Research & Support',
+      ],
+      cta: 'Book Consultation',
+      isPopular: true,
+    },
+  ],
+  monthly: [
+    {
+      name: 'Individual Basic',
+      price: '₹499',
+      period: '/ month',
+      features: [
+        'HELIX ID Creation',
+        'Personalized SYMBI Companion',
+        'Basic Asset Wallet',
+        'Basic Daily Routine Analysis',
+      ],
+      cta: 'Get Started',
+      isPopular: false,
+    },
+    {
+      name: 'Brand Basic',
+      price: '₹4,999',
+      period: '/ month',
+      features: [
+        'Brand HELIX Identity',
+        'SYMBI AI Integration & Insights',
+        'Symbolic Audience Analysis',
+        'Brand-level Data Analysis',
+      ],
+      cta: 'For Brands',
+      isPopular: false,
+    },
+    {
+      name: 'Enterprise',
+      price: 'Contact Us',
+      period: '',
+      features: [
+        'Custom Symbolic AI Solutions',
+        'Proprietary Symbolic Modeling',
+        'Full Data & Privacy Control',
+        'Dedicated Research & Support',
+      ],
+      cta: 'Book Consultation',
+      isPopular: true,
+    },
+  ]
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -105,6 +126,9 @@ const itemVariants = {
 
 
 export function Membership() {
+  const [isAnnual, setIsAnnual] = useState(true);
+  const tiers = isAnnual ? tiersData.annual : tiersData.monthly;
+
   return (
     <SectionWrapper id="membership">
       <motion.div 
@@ -121,6 +145,28 @@ export function Membership() {
           Choose the membership tier that aligns with your journey. Unlock powerful tools for identity, creation, and growth in the symbolic economy.
         </p>
       </motion.div>
+
+      <motion.div
+        className="my-8 flex items-center justify-center gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={itemVariants}
+      >
+        <Label htmlFor="billing-cycle" className={cn(!isAnnual && 'text-muted-foreground')}>
+          Monthly
+        </Label>
+        <Switch
+          id="billing-cycle"
+          checked={isAnnual}
+          onCheckedChange={setIsAnnual}
+          aria-label="Toggle between monthly and annual billing"
+        />
+        <Label htmlFor="billing-cycle" className={cn(isAnnual && 'text-muted-foreground')}>
+          Annual (Save 20%)
+        </Label>
+      </motion.div>
+
       <motion.div 
         className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
         variants={containerVariants}
