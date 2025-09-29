@@ -16,7 +16,7 @@ const navLinks = [
   { href: '#modules', label: 'Modules' },
   { href: '#indexes', label: 'Indexes' },
   { href: '#membership', label: 'Memberships' },
-  { href: '/marketplace/store', label: 'Store' },
+  { href: '#marketplace', label: 'Auction' },
 ];
 
 export function Header() {
